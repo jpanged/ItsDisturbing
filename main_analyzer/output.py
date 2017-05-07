@@ -113,46 +113,84 @@ def makeFile(input_data):
         elif nluEntities == 0:
             pass
         text = parsed_input["line{}".format(i)]["text"]
+        str_to_ret = ""
+
         tone_emotion_anger = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["anger"])
+        if tone_emotion_anger > 40.0:
+            str_to_ret += "\nAnger: the response to injustice, conflict, humiliation, negligence or betrayal."
         tot_anger.append(tone_emotion_anger)
+
         tone_emotion_joy = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["joy"])
+        if tone_emotion_joy > 40.0:
+            str_to_ret += "\nJoy: the response to enjoyment, satisfaction, and pleasure"
         tot_joy.append(tone_emotion_joy)
+
         tone_emotion_fear = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["fear"])
+        if tone_emotion_fear > 40.0:
+            str_to_ret += "\nFear: the response to impending danger"
         tot_fear.append(tone_emotion_fear)
+
         tone_emotion_sadness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["sadness"])
+        if tone_emotion_sadness > 40.0:
+            str_to_ret += "\nSadness: the response to loss and disadvantage"
         tot_sadness.append(tone_emotion_sadness)
+
         tone_emotion_disguist = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["disgust"])
+        if tone_emotion_disguist > 40.0:
+            str_to_ret += "\nDisgust: the response to something offensive or unpleasant"
         tot_disgust.append(tone_emotion_disgust)
 
         tone_social_extraversion = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["extraversion_big5"])
+        if tone_social_extraversion > 40.0:
+            str_to_ret += "\nExtraversion: the tendency to seek stimulation in the company of others"
         tot_extraversion.append(tone_emotion_extraversion)
+
         tone_social_openness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["openness_big5"])
+        if tone_social_openness > 40.0:
+            str_to_ret += "\nOpenness: the extent a person is willing to experience a variety of activities"
         tot_openness.append(tone_emotion_openness)
+
         tone_social_conscientiousness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["conscientiousness_big5"])
+        if tone_social_conscientiousness > 40.0:
+            str_to_ret += "\nConscientiousness: the tendency to act in an organized or thoughtful way"
         tot_disgust.append(tone_emotion_disgust)
+
         tone_social_neuroticism = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["neuroticism_big5"])
+        if tone_social_neuroticism > 40.0:
+            str_to_ret += "\nNeuroticism: the extent a person's emotion is sensitive to the environment"
         tot_neuroticism.append(tone_emotion_neuroticism)
+
         tone_social_agreeableness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["agreeableness_big5"])
+        if tone_social_agreeableness > 40.0:
+            str_to_ret += "\nAgreeableness: the tendency to be compassionate and cooperative towards others"
         tot_agreeableness.append(tone_emotion_agreeableness)
 
         tone_writing_analytical = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["analytical"])
+        if tone_writing_analytical > 40.0:
+            str_to_ret += "\nAnalytical: a person's reasoning and analytical attitude about things"
         tot_analytical.append(tone_emotion_analytical)
+
         tone_writing_confident = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["confident"])
+        if tone_writing_confident > 40.0:
+            str_to_ret += "\nConfident: a person's degree of certainty"
         tot_confident.append(tone_emotion_confident)
+
         tone_writing_tentative = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["tentative"])
+        if tone_writing_tentative > 40.0:
+            str_to_ret += "\nTentative: a person's degree of inhibition"
         tot_tentative.append(tone_emotion_tentative)
 
         totalData = '''
