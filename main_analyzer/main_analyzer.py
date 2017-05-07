@@ -62,26 +62,30 @@ def get_master_dictionary(my_file, type):
         num_lines = len(my_text)
     else:   # .txt file
         my_text = open(my_file, "r")
+        my_text = my_text.read().replace('\n', '')
+        my_text = my_text.split('.')
 
     master_dict['num_lines'] = 0
     curr_index = 0
 
     for line in my_text:
-        print("\n\nline = {}".format(line))
-        if line.endswith('\n'):
-            line = line[:-2]
-        nlu_dict = get_nlu_dict_per_line(line)
-        tone_dict = get_tone_dict_per_line(line)
-        line_output = {
-            'text': line,
-            'nlu': nlu_dict,
-            'tone': tone_dict
-        }
-        dict_name = "line" + str(curr_index)
-        master_dict['num_lines'] = 1 + master_dict['num_lines']
-        master_dict[dict_name] = line_output
-        curr_index += 1
+        if line != "":
+            print("\n\nline = {}".format(line))
+            if line.endswith('\n'):
+                line = line[:-2]
+            nlu_dict = get_nlu_dict_per_line(line)
+            tone_dict = get_tone_dict_per_line(line)
+            line_output = {
+                'text': line,
+                'nlu': nlu_dict,
+                'tone': tone_dict
+            }
+            dict_name = "line" + str(curr_index)
+            master_dict['num_lines'] = 1 + master_dict['num_lines']
+            master_dict[dict_name] = line_output
+            curr_index += 1
 
+    print(json.dumps(master_dict, indent=2))
     master_dict = json.dumps(master_dict)
     return master_dict
 
