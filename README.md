@@ -1,7 +1,14 @@
 # It's Disturbing
-## *Is it?*
+## Is it?
 
 ## Description
+Here in the United States, studies show that 10-35% of the population will exhibit domestic violence on their partners, 
+yet less than 1% of domestic violence cases are ever reported to police. This is a result of many different factors,
+as victims are often in love with, have an intense fear of, or may be financially dependent
+on the abuser. Some victims do not even view their current situation as a physically abusive relationship, keeping them stuck 
+in that unhealthy lifestyle for years.
+
+Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
 
 
 
