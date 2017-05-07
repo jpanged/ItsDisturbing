@@ -19,5 +19,18 @@ with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
    for i in range((len(output['results']))):
       transcript.append(output['results'][i]['alternatives'][0]['transcript'])
 
-print(transcript)
+   index = []
+
+   for i in range(1, len(transcript) + 1):
+      index.append(("line" + str(i)))
+
+   list1 = []
+
+   for i in range(len(transcript)):
+      t = index[i], transcript[i]
+      list1.append(t)
+
+   d = dict(list1)
+
+print(d)
 
