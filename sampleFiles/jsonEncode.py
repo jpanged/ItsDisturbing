@@ -6,13 +6,6 @@ NLP_data = {
     'relevance': 0.3
 }
 
-tone_analysis = {
-    'emotion': '',
-    'writing': '',
-    'social': ''
-
-}
-
 tone_analysis_emotion = {
     'anger': '',
     'disgust': '',
@@ -28,15 +21,14 @@ tone_analysis_writing = {
 }
 
 tone_analysis_social = {
-    'openness': '',
-    'Conscientiousness': '',
-    'extroversion': '',
-    'agreeableness': '',
-    'emotional range': ''
+    'openness_big5': '',
+    'conscientiousness_big5': '',
+    'extraversion_big5': '',
+    'agreeableness_big5': '',
+    'neuroticism_big5': ''
 }
 
 tone = {
-    'analysis': tone_analysis,
     'emotion': tone_analysis_emotion,
     'writing': tone_analysis_writing,
     'social': tone_analysis_social
