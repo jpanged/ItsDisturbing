@@ -26,7 +26,8 @@ Objectives:
 * NaturalLanguageUnderstanding: analyze semantic features of text input
     - Analyze text for "redflag" keywords
     - May involve potential actions the user will take
-* * Generate report on the inputted audio/text file.
+* Generate report on the inputted audio/text file.
+  * Add progress bar for visualizations of each category.
 
 
 Look for:
