@@ -9,20 +9,42 @@ import watson_developer_cloud.natural_language_understanding.features.v1 as \
 
 
 def main():
-    get_master_dictionary(argv[1])
+    menu()
 
 """
 Presents user with menu of options
 """
 def menu():
-    user_select = input("\nEnter your .wav file or .txt file:\n")
-    if user_select.endswith(".wav"):
-        pass
-    elif user_select.endswith(".txt"):
-        pass
+    user_inp = raw_input("\nEnter your .wav file or .txt file: ")
+    if user_inp.endswith(".wav"):
+        transcript_str = wav_file_to_text(user_inp)
+        get_master_dictionary(transcript_str, "wav")
+    elif user_inp.endswith(".txt"):
+        get_master_dictionary(user_inp, "txt")
     else:
         print("Invalid option")
         menu()
+
+"""
+a sound_file is a str representing a .wav file
+"""
+def wav_file_to_text(sound_file):
+   transcript = []
+
+   with open(join(dirname(__file__), sound_file), 'rb') as audio_file:
+      output = (speech_to_text.recognize(
+         audio_file, content_type='audio/wav', timestamps=False,
+         word_confidence=False, continuous=True))
+
+      for i in range((len(output['results']))):
+         transcript.append(output['results'][i]['alternatives'][0]['transcript'])
+
+      ret = ""
+      for i in range(len(transcript)):
+         ret = ret + transcript[i] + "\n"
+      if ret.endswith('\n'):
+          ret = ret[:-2]
+   return ret
 
 """
 my_text is a str representing the .txt file the user wants to read from
@@ -32,12 +54,19 @@ Returns a dictionary of each line in the format
 where tone is the line's emotion, writing, and social tones returned from the
 function below
 """
-def get_master_dictionary(my_text):
+def get_master_dictionary(my_file, type):
     master_dict = {}
-    my_file = open(my_text, "r")
+
+    if type == "wav":   # .wav file
+        my_text = my_file.split('\n')  # --> ['Line 1', 'Line 2', 'Line 3']
+        num_lines = len(my_text)
+    else:   # .txt file
+        my_text = open(my_file, "r")
+
+    master_dict['num_lines'] = 0
     curr_index = 0
 
-    for line in my_file:
+    for line in my_text:
         print("\n\nline = {}".format(line))
         if line.endswith('\n'):
             line = line[:-2]
@@ -49,6 +78,7 @@ def get_master_dictionary(my_text):
             'tone': tone_dict
         }
         dict_name = "line" + str(curr_index)
+        master_dict['num_lines'] = 1 + master_dict['num_lines']
         master_dict[dict_name] = line_output
         curr_index += 1
 
@@ -62,29 +92,6 @@ speech_to_text = SpeechToTextV1(
    x_watson_learning_opt_out = False
 )
 
-def wav_file_to_text():
-    transcript = []
-
-    with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
-       output = (speech_to_text.recognize(
-          audio_file, content_type='audio/wav', timestamps=False,
-          word_confidence=False, continuous=True))
-
-       for i in range((len(output['results']))):
-          transcript.append(output['results'][i]['alternatives'][0]['transcript'])
-
-       index = []
-       for j in range(1, len(transcript) + 1):
-          index.append(("line" + str(j)))
-
-       list1 = []
-       for k in range(len(transcript)):
-          t = index[k], transcript[k]
-          list1.append(t)
-
-       d = dict(list1)
-
-    return d
 
 tone_analyzer = ToneAnalyzerV3(
     username = '177e2d8a-1048-4fcc-b256-022adbc2fc6b',
@@ -171,6 +178,7 @@ Returns a dictionary with corresponding type, text, relevance, count values
 def get_nlu_dict_per_line(line):
     nlu_dict = {}
     output = nlp(line)
+    nlu_dict['nlu_entity_items'] = len(output)
     for i in range(len(output)):
         entity_dict = {
             'type': '',
@@ -185,7 +193,7 @@ def get_nlu_dict_per_line(line):
         entity_dict['relevance'] = entity['relevance']
         entity_dict['count'] = entity['count']
 
-        en_dict_name = "entity" + str(i+1)
+        en_dict_name = "entity" + str(i)
         nlu_dict[en_dict_name] = entity_dict
 
     return nlu_dict

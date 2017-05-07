@@ -9,6 +9,7 @@ speech_to_text = SpeechToTextV1(
    x_watson_learning_opt_out = False
 )
 
+
 def wav_file_to_text():
    transcript = []
 
@@ -23,8 +24,9 @@ def wav_file_to_text():
       ret = ""
 
       for i in range(len(transcript)):
-         ret = ret + transcript[i] + "\n" 
-                  
+         ret = ret + transcript[i] + "\n"
+      if ret.endswith('\n'):
+          ret = ret[:-2]
       '''
       index = []
       for j in range(1, len(transcript) + 1):
@@ -38,6 +40,6 @@ def wav_file_to_text():
       d = dict(list1)
       '''
 
-   print(ret)
+   return ret
 
 wav_file_to_text()
