@@ -1,0 +1,19 @@
+
+NLP
+================
+NLP
+================
+NLP
+================
+NLP
+================
+NLP
+================
+NLP
+================
+NLP
+================
+NLP
+================tone : Persontext : Johnrelevance : 0.45
+tone
+================emotion : {'anger': '0.23', 'disgust': '0.22', 'fear': '0.43', 'joy': '0.12', 'sadness': '0.11'}writing : {'analytical': '0.123', 'confident': '0.43', 'tentative': '0.5'}social : {'openness': '0.33', 'Conscientiousness': '0.23', 'extroversion': '0.2223', 'agreeableness': '0.44', 'emotional range': '0.43'}
