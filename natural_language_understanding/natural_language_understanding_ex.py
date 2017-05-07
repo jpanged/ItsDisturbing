@@ -45,9 +45,8 @@ def get_nlu_dict_per_line(line):
         entity_dict['count'] = entity['count']
 
         en_dict_name = "entity" + str(i+1)
-        nlu_dict[en_dict_name, entity_dict]
+        nlu_dict[en_dict_name] = entity_dict
 
-    #print("nlu_dict = {}".format(nlu_dict))
     return nlu_dict
 
 if __name__ == "__main__":

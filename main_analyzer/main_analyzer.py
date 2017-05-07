@@ -110,13 +110,13 @@ def get_tone_dict_per_line(line):
 
 def nlp(input_stuff):
     natural_language_understanding = NaturalLanguageUnderstandingV1(
-        version='2017-02-27',
-        username='93f6afbe-f487-4f2a-847c-5972d0aaff35',
-        password='3Bntz00f6MCI')
+        version = '2017-02-27',
+        username = '93f6afbe-f487-4f2a-847c-5972d0aaff35',
+        password = '3Bntz00f6MCI')
 
     response = natural_language_understanding.analyze(
-        text= input_stuff,
-        features=[features.Entities(), features.Keywords()])
+        text = input_stuff,
+        features = [features.Entities(), features.Keywords()])
     return(response["entities"])
 
 """
@@ -125,11 +125,8 @@ str -> dict
 Returns a dictionary with corresponding type, text, relevance, count values
 """
 def get_nlu_dict_per_line(line):
-
     nlu_dict = {}
-
     output = nlp(line)
-    #print("output = {}".format(output))
     for i in range(len(output)):
         entity_dict = {
             'type': '',
@@ -145,9 +142,8 @@ def get_nlu_dict_per_line(line):
         entity_dict['count'] = entity['count']
 
         en_dict_name = "entity" + str(i+1)
-        nlu_dict[en_dict_name, entity_dict]
+        nlu_dict[en_dict_name] = entity_dict
 
-    #print("nlu_dict = {}".format(nlu_dict))
     return nlu_dict
 
 
