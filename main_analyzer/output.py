@@ -55,7 +55,7 @@ def makeFile(input_data):
                             <tr>
                             <th>Type</th>
                             <th>Text</th>
-                            <Relevance</th>
+                            <th>Relevance</th>
                             </thead>
                           <tbody>
                             <tr>
@@ -465,9 +465,6 @@ def makeFile(input_data):
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <title>Generated Report</title>
-
-      <meta name="description" content="Source code generated using layoutit.com">
-      <meta name="author" content="LayoutIt!">
 
       <link href="src/css/bootstrap.min.css" rel="stylesheet">
       <link href="src/css/style.css" rel="stylesheet">
