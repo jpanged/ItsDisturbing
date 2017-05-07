@@ -6,45 +6,55 @@ from watson_developer_cloud import ToneAnalyzerV3
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 import watson_developer_cloud.natural_language_understanding.features.v1 as \
     features
+import output
 
 
 def main():
     menu()
 
+
 """
 Presents user with menu of options
 """
+
+
 def menu():
     user_inp = argv[1]
     #user_inp = raw_input("\nEnter your .wav file or .txt file: ")
     if user_inp.endswith(".wav"):
         transcript_str = wav_file_to_text(user_inp)
-        get_master_dictionary(transcript_str, "wav")
+        outFile = get_master_dictionary(transcript_str, "wav")
     elif user_inp.endswith(".txt"):
-        get_master_dictionary(user_inp, "txt")
+        outFile = get_master_dictionary(user_inp, "txt")
     else:
         print("Error: invalid file. Must be .wav or .txt")
+    output.outPutFile(outFile)
+
 
 """
 a sound_file is a str representing a .wav file
 """
+
+
 def wav_file_to_text(sound_file):
-   transcript = []
+    transcript = []
 
-   with open(join(dirname(__file__), sound_file), 'rb') as audio_file:
-      output = (speech_to_text.recognize(
-         audio_file, content_type='audio/wav', timestamps=False,
-         word_confidence=False, continuous=True))
+    with open(join(dirname(__file__), sound_file), 'rb') as audio_file:
+        output = (speech_to_text.recognize(
+            audio_file, content_type='audio/wav', timestamps=False,
+            word_confidence=False, continuous=True))
 
-      for i in range((len(output['results']))):
-         transcript.append(output['results'][i]['alternatives'][0]['transcript'])
+        for i in range((len(output['results']))):
+            transcript.append(output['results'][i]
+                              ['alternatives'][0]['transcript'])
 
-      ret = ""
-      for i in range(len(transcript)):
-         ret = ret + transcript[i] + "\n"
-      if ret.endswith('\n'):
-          ret = ret[:-2]
-   return ret
+        ret = ""
+        for i in range(len(transcript)):
+            ret = ret + transcript[i] + "\n"
+        if ret.endswith('\n'):
+            ret = ret[:-2]
+    return ret
+
 
 """
 my_text is a str representing the .txt file the user wants to read from
@@ -54,6 +64,8 @@ Returns a dictionary of each line in the format
 where tone is the line's emotion, writing, and social tones returned from the
 function below
 """
+
+
 def get_master_dictionary(my_file, type):
     master_dict = {}
 
@@ -91,17 +103,17 @@ def get_master_dictionary(my_file, type):
 
 
 speech_to_text = SpeechToTextV1(
-   username = "587aae79-5967-434b-93c4-3c4bd3f40621",
-   password = "AnPJuMD0GjYE",
-   x_watson_learning_opt_out = False
+    username="587aae79-5967-434b-93c4-3c4bd3f40621",
+    password="AnPJuMD0GjYE",
+    x_watson_learning_opt_out=False
 )
 
 
 tone_analyzer = ToneAnalyzerV3(
-    username = '177e2d8a-1048-4fcc-b256-022adbc2fc6b',
-    password = 'xMZuRoB52uu7',
+    username='177e2d8a-1048-4fcc-b256-022adbc2fc6b',
+    password='xMZuRoB52uu7',
     #url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
-    version = '2016-05-06'
+    version='2016-05-06'
 )
 
 """
@@ -109,6 +121,8 @@ a line is a str representing one line of the .txt file
 str -> dict
 Returns a dictionary with corresponding emotion, writing, and social tone scores
 """
+
+
 def get_tone_dict_per_line(line):
 
     tone_analysis_emotion = {
@@ -133,16 +147,16 @@ def get_tone_dict_per_line(line):
         'neuroticism_big5': ''
     }
 
-    output = tone_analyzer.tone(text = line)
+    output = tone_analyzer.tone(text=line)
     for i in range(3):
         tone_categories = output['document_tone']['tone_categories'][i]
         category_id = tone_categories['category_id']
         tones = tone_categories['tones']
-        #print("\n{}".format(category_id))
+        # print("\n{}".format(category_id))
 
         for j in range(len(tones)):
-            tone_name =  tones[j]['tone_name']
-            score =  tones[j]['score']
+            tone_name = tones[j]['tone_name']
+            score = tones[j]['score']
             tone_id = tones[j]['tone_id']
             #print("{}: {}".format(tone_name, score))
 
@@ -165,20 +179,23 @@ def get_tone_dict_per_line(line):
 
 def nlp(input_stuff):
     natural_language_understanding = NaturalLanguageUnderstandingV1(
-        version = '2017-02-27',
-        username = "83e901c3-bc9c-43f8-af70-c836d0cd0ea0",
-        password = "yDEjfUUEeHBz")
+        version='2017-02-27',
+        username="83e901c3-bc9c-43f8-af70-c836d0cd0ea0",
+        password="yDEjfUUEeHBz")
 
     response = natural_language_understanding.analyze(
-        text = input_stuff,
-        features = [features.Entities(), features.Keywords()])
+        text=input_stuff,
+        features=[features.Entities(), features.Keywords()])
     return(response["entities"])
+
 
 """
 a line is a str representing one line of the .txt file
 str -> dict
 Returns a dictionary with corresponding type, text, relevance, count values
 """
+
+
 def get_nlu_dict_per_line(line):
     nlu_dict = {}
     output = nlp(line)
@@ -201,7 +218,6 @@ def get_nlu_dict_per_line(line):
         nlu_dict[en_dict_name] = entity_dict
 
     return nlu_dict
-
 
 
 if __name__ == "__main__":
