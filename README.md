@@ -154,3 +154,9 @@ or
 $ cd main_analyzer/
 $ cd main_analyzer.py .TXT_FILE
 ```
+
+### API Resources, IBM Watson™
+
+- [Natural Language Understanding](https://www.ibm.com/watson/developercloud/natural-language-understanding/api/v1/)
+- [Tone Analyzer](https://www.ibm.com/watson/developercloud/tone-analyzer/api/v3/)
+- [Speech to Text](https://www.ibm.com/watson/developercloud/speech-to-text/api/v1/)
