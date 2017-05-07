@@ -15,25 +15,36 @@ def main():
 """
 my_text is a str representing the .txt file the user wants to read from
 .txt file -> dict
-Returns a dictionary with corresponding emotion, writing, and social tone scores
+Returns a dictionary of each line in the format
+    'line1' : tone
+where tone is the line's emotion, writing, and social tones returned from the
+function below
 """
 def get_tone_dictionaries(my_text):
-
-
-
+    supreme_dict = {}
     my_file = open(my_text, "r")
     curr_index = 0
 
     for line in my_file:
         print("\n\nline = {}".format(line))
+        if line.endswith('\n'):
+            line = line[:-2]
         tone_dict = get_tone_dict_per_line(line)
-        
         line_output = {
             'tone': tone_dict,
             'text': line
         }
-        print(line_output)
+        dict_name = "line" + str(curr_index)
+        supreme_dict[dict_name] = line_output
+        curr_index += 1
 
+    #print supreme_dict
+
+"""
+a line is a str representing one line of the .txt file
+str -> dict
+Returns a dictionary with corresponding emotion, writing, and social tone scores
+"""
 def get_tone_dict_per_line(line):
 
     tone_analysis_emotion = {
