@@ -11,7 +11,7 @@ in that unhealthy lifestyle for years.
 Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
 
 ## Natural Language Understanding
-Watson's Natural Language Understanding tool uses natural language processing to analyze semantic features of any text.
+The IBM Watson™ Natural Language Understanding service uses natural language processing to analyze semantic features of any text.
 
 ### Entities
 Identify people, cities, organizations, and many other types of entities in your text.
@@ -26,7 +26,7 @@ Identify people, cities, organizations, and many other types of entities in your
 
 
 ## Tone Analyzer
-Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
+The IBM Watson™ Tone Analyzer service uses linguistic analysis to detect communication tones in written text along three major categories: emotion, language, and social.
 
 ### Emotion
 Emotional tone measures different types of emotions and feelings that people express.
@@ -129,5 +129,5 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 
 
 ## Speech to Text
-The Speech to Text service enables IBM's speech recognition capabilities.
+The IBM Watson™ Speech to Text service enables speech recognition capabilities.
 The service transcribes speech from various languages and audio formats to text with low latency.
