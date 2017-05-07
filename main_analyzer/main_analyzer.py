@@ -15,15 +15,15 @@ def main():
 Presents user with menu of options
 """
 def menu():
-    user_inp = raw_input("\nEnter your .wav file or .txt file: ")
+    user_inp = argv[1]
+    #user_inp = raw_input("\nEnter your .wav file or .txt file: ")
     if user_inp.endswith(".wav"):
         transcript_str = wav_file_to_text(user_inp)
         get_master_dictionary(transcript_str, "wav")
     elif user_inp.endswith(".txt"):
         get_master_dictionary(user_inp, "txt")
     else:
-        print("Invalid option")
-        menu()
+        print("Error: invalid file. Must be .wav or .txt")
 
 """
 a sound_file is a str representing a .wav file
