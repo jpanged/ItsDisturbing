@@ -37,7 +37,8 @@ def get_master_dictionary(my_text):
         master_dict[dict_name] = line_output
         curr_index += 1
 
-    print master_dict
+    master_dict = json.dumps(master_dict)
+    return master_dict
 
 
 
