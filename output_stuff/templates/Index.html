@@ -1,4 +1,4 @@
-$def with (greeting)
+$def with (values)
 
 <html>
     <head>
@@ -6,10 +6,7 @@ $def with (greeting)
     </head>
 <body>
 
-$if greeting:
-    I just wanted to say <em style="color: green; font-size: 2em;">$greeting</em>.
-$else:
-    <em>Hello</em>, world!
+$values
 
 </body>
 </html>

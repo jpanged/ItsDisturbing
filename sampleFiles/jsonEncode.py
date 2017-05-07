@@ -1,9 +1,13 @@
 import json
 
 NLP_data = {
-    'tone': 'Person',
-    'text': 'Wayne',
-    'relevance': 0.3
+    'tone': '',
+    'text': '',
+    'relevance': ''
+}
+
+speech_to_text = {
+    'text': output,
 }
 
 tone_analysis = {
