@@ -468,8 +468,8 @@ def makeFile():
       <meta name="description" content="Source code generated using layoutit.com">
       <meta name="author" content="LayoutIt!">
 
-      <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-      <link href="bootstrap/css/style.css" rel="stylesheet">
+      <link href="src/css/bootstrap.min.css" rel="stylesheet">
+      <link href="src/css/style.css" rel="stylesheet">
 
     </head>
 
@@ -495,9 +495,9 @@ def makeFile():
           </div>
         </div>
 
-        <script src="bootstrap/js/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-        <script src="bootstrap/js/scripts.js"></script>
+        <script src="src/js/jquery.min.js"></script>
+        <script src="src/js/bootstrap.min.js"></script>
+        <script src="src/js/scripts.js"></script>
     </body>
 
     </html>
