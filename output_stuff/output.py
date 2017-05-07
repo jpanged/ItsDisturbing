@@ -140,7 +140,9 @@ def makeFile():
 
 
 def openFile():
-    fileLocation = "file://{}/templates/Index.html".format(os.getcwd())
+    currentTime = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
+    fileName = "report_generated_{}".format(currentTime)
+    fileLocation = "file://{}/templates/{}.html}".format(os.getcwd(),fileName)
     webbrowser.open(fileLocation, new=2)
 
 
