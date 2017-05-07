@@ -1,5 +1,5 @@
 # It's Disturbing
-## Is it?
+### Is it?
 
 ## Description
 Here in the United States, studies show that 10-35% of the population will exhibit domestic violence on their partners, 
@@ -10,7 +10,7 @@ in that unhealthy lifestyle for years.
 
 Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
 
-### Natural Language Understanding
+## Natural Language Understanding
 Watson's Natural Language Understanding tool uses natural language processing to analyze semantic features of any text.
 
 ### Entities
@@ -23,7 +23,9 @@ Identify people, cities, organizations, and many other types of entities in your
 | Type      | Entity type                                                                                             |
 | Count     | Number of times the entity is mentioned in the text                                                     |
 
-### Tone Analyzer
+
+
+## Tone Analyzer
 Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
 
 ### Emotion
@@ -124,3 +126,8 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Even-tempered | Temperamental  |
 | Comfortable   | Self-conscious |
 | Unemotional   | Emotional      |
+
+
+## Speech to Text
+The Speech to Text service enables IBM's speech recognition capabilities.
+The service transcribes speech from various languages and audio formats to text with low latency.
