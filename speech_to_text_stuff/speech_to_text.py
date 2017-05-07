@@ -10,27 +10,34 @@ speech_to_text = SpeechToTextV1(
 )
 
 def wav_file_to_text():
-    transcript = []
+   transcript = []
 
-    with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
-       output = (speech_to_text.recognize(
-          audio_file, content_type='audio/wav', timestamps=False,
-          word_confidence=False, continuous=True))
+   with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
+      output = (speech_to_text.recognize(
+         audio_file, content_type='audio/wav', timestamps=False,
+         word_confidence=False, continuous=True))
 
-       for i in range((len(output['results']))):
-          transcript.append(output['results'][i]['alternatives'][0]['transcript'])
+      for i in range((len(output['results']))):
+         transcript.append(output['results'][i]['alternatives'][0]['transcript'])
 
-       index = []
-       for j in range(1, len(transcript) + 1):
-          index.append(("line" + str(j)))
+      ret = ""
 
-       list1 = []
-       for k in range(len(transcript)):
-          t = index[k], transcript[k]
-          list1.append(t)
+      for i in range(len(transcript)):
+         ret = ret + transcript[i] + "\n" 
+                  
+      '''
+      index = []
+      for j in range(1, len(transcript) + 1):
+         index.append(("line" + str(j)))
 
-       d = dict(list1)
+      list1 = []
+      for k in range(len(transcript)):
+         t = index[k], transcript[k]
+         list1.append(t)
 
-    return d
+      d = dict(list1)
+      '''
+
+   print(ret)
 
 wav_file_to_text()
