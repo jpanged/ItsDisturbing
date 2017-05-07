@@ -68,8 +68,8 @@ def makeFile(input_data):
                               <td width="40%">
 
                                 <div class="progress">
-                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {2:f}%">
-
+                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="min-width: 4em; width: {2:f}%%;">
+                                    {2:.0f}%
                                   </div>
                                 </div>
 
