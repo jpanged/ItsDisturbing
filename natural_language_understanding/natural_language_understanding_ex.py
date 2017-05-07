@@ -17,6 +17,13 @@ natural_language_understanding = NaturalLanguageUnderstandingV1(
 response = natural_language_understanding.analyze(
     text='According to all known laws of aviation, there is no way that a bee should be able to fly.',
          #'Superman fears not Banner, but Wayne.',
-    features=[features.Entities(), features.Keywords()])
+    features=[features.Entities(),
+                features.Keywords(),
+                features.Concepts(),
+                features.Categories(),
+                features.Emotion(),
+                features.SemanticRoles(),
+                features.Relations(),
+                features.Sentiment()])
 
 print(json.dumps(response, indent=2))
