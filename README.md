@@ -10,7 +10,11 @@ in that unhealthy lifestyle for years.
 
 Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
 
+### Natural Language Understanding
+Watson's Natural Language Understanding tool uses natural language processing to analyze semantic features of any text.
 
+### Entities
+Identify people, cities, organizations, and many other types of entities in your text.
 
 ### Tone Analyzer
 Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
