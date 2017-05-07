@@ -16,6 +16,13 @@ Watson's Natural Language Understanding tool uses natural language processing to
 ### Entities
 Identify people, cities, organizations, and many other types of entities in your text.
 
+| Names     | Description                                                                                             |
+| --------- |:------------------------------------------------------------------------------------------------------- |
+| Relevance | Relevance score ranging from 0 to 1. A 0 means it's not relevant, and a 1 means it's highly relevant.   |
+| Text      | Entity                                                                                                  |
+| Type      | Entity type                                                                                             |
+| Count     | Number of times the entity is mentioned in the text                                                     |
+
 ### Tone Analyzer
 Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
 
@@ -53,19 +60,19 @@ Describes perceived writing style.
 ####    Analytical
     A person's reasoning and analytical attitude about things.
  Low Scores                                | High Scores                                                 |
- ----------------------------------------- |:-----------------------------------------------------------:|
+ ----------------------------------------- |:----------------------------------------------------------- |
  Little or no evidence of analytical tone. | Intellectual, rational, systematic, emotionless, impersonal |
 
 ####    Confidence
     A person's degree of certainty.
 | Low Scores                                   | High Scores                              |
-| -------------------------------------------- |:----------------------------------------:|
+| -------------------------------------------- |:---------------------------------------- |
 | Little or no evidence of confidence in tone. | Assured, collected, hopeful, egotistical |
 
 ####    Tentative
     A person's degree of inhibition.
 | Low Scores                                      | High Scores                          |
-| ----------------------------------------------- |:------------------------------------:|
+| ----------------------------------------------- |:------------------------------------ |
 | Little or no evidence of tentativeness in tone. | Questionable, doubtful, or debatable |
 
 
@@ -76,7 +83,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ####    Openness
     The extent a person is open to experience a variety of activities.
 | Low Scores    | High Scores   |
-| ------------- |:-------------:|
+| ------------- |:------------- |
 | Down-to-earth | Imaginative   |
 | Uncreative    | Creative      |
 | Conventional  | Original      |
@@ -85,7 +92,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ####    Conscientiousness
     The tendency to act in an organized or thoughtful way.
 | Low Scores    | High Scores    |
-| ------------- |:--------------:|
+| ------------- |:-------------- |
 | Negligent     | Conscientious  |
 | Lazy          | Hard-working   |
 | Disorganized  | Well-organized |
@@ -94,7 +101,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ####    Extraversion
     The tendency to seek stimulation in the company of others.
 | Low Scores    | High Scores   |
-| ------------- |:-------------:|
+| ------------- |:------------- |
 | Loner         | Joiner        |
 | Quiet         | Talkative     |
 | Passive       | Active        |
@@ -103,7 +110,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ####    Agreeableness
     The tendency to be compassionate and cooperative towards others.
 | Low Scores    | High Scores   |
-| ------------- |:-------------:|
+| ------------- |:------------- |
 | Suspicious    | Trusting      |
 | Critical      | Lenient       |
 | Ruthless      | Soft-hearted  |
@@ -112,7 +119,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ####    Neuroticism
     The extent a person's emotion is sensitive to the environment.
 | Low Scores    | High Scores    |
-| ------------- |:--------------:|
+| ------------- |:-------------- |
 | Calm          | Worried        |
 | Even-tempered | Temperamental  |
 | Comfortable   | Self-conscious |
