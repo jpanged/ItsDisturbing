@@ -96,34 +96,34 @@ def makeFile():
         elif nluEntities == 0:
             pass
         text = parsed_input["line{}".format(i)]["text"]
-        tone_emotion_anger = parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["anger"]
-        tone_emotion_joy = parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["joy"]
-        tone_emotion_fear = parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["fear"]
-        tone_emotion_sadness = parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["sadness"]
-        tone_emotion_disguist = parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["disgust"]
+        tone_emotion_anger = float(parsed_input["line{}".format(
+            i)]["tone"]["emotion"]["anger"])
+        tone_emotion_joy = float(parsed_input["line{}".format(
+            i)]["tone"]["emotion"]["joy"])
+        tone_emotion_fear = float(parsed_input["line{}".format(
+            i)]["tone"]["emotion"]["fear"])
+        tone_emotion_sadness = float(parsed_input["line{}".format(
+            i)]["tone"]["emotion"]["sadness"])
+        tone_emotion_disguist = float(parsed_input["line{}".format(
+            i)]["tone"]["emotion"]["disgust"])
 
-        tone_social_extraversion = parsed_input["line{}".format(
-            i)]["tone"]["social"]["extraversion_big5"]
-        tone_social_openness = parsed_input["line{}".format(
-            i)]["tone"]["social"]["openness_big5"]
-        tone_social_conscientiousness = parsed_input["line{}".format(
-            i)]["tone"]["social"]["conscientiousness_big5"]
-        tone_social_neuroticism = parsed_input["line{}".format(
-            i)]["tone"]["social"]["neuroticism_big5"]
-        tone_social_agreeableness = parsed_input["line{}".format(
-            i)]["tone"]["social"]["agreeableness_big5"]
+        tone_social_extraversion = float(parsed_input["line{}".format(
+            i)]["tone"]["social"]["extraversion_big5"])
+        tone_social_openness = float(parsed_input["line{}".format(
+            i)]["tone"]["social"]["openness_big5"])
+        tone_social_conscientiousness = float(parsed_input["line{}".format(
+            i)]["tone"]["social"]["conscientiousness_big5"])
+        tone_social_neuroticism = float(parsed_input["line{}".format(
+            i)]["tone"]["social"]["neuroticism_big5"])
+        tone_social_agreeableness = float(parsed_input["line{}".format(
+            i)]["tone"]["social"]["agreeableness_big5"])
 
-        tone_writing_analytical = parsed_input["line{}".format(
-            i)]["tone"]["writing"]["analytical"]
-        tone_writing_confident = parsed_input["line{}".format(
-            i)]["tone"]["writing"]["confident"]
-        tone_writing_tentative = parsed_input["line{}".format(
-            i)]["tone"]["writing"]["tentative"]
+        tone_writing_analytical = float(parsed_input["line{}".format(
+            i)]["tone"]["writing"]["analytical"])
+        tone_writing_confident = float(parsed_input["line{}".format(
+            i)]["tone"]["writing"]["confident"])
+        tone_writing_tentative = float(parsed_input["line{}".format(
+            i)]["tone"]["writing"]["tentative"])
 
         tableData_emotion = '<h3>Emotion Information</h3><table class="table table-striped"><tr><th>Anger</th><th>Joy</th><th>Fear</th><th>Sadness</th><th>Disguist</th></tr><tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr></table>'.format(
             tone_emotion_anger, tone_emotion_joy, tone_emotion_fear, tone_emotion_sadness, tone_emotion_disguist)
