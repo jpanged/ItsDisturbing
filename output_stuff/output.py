@@ -14,7 +14,9 @@ def makeFile():
         os.remove("templates/Index.html")
     except OSError:
         pass
-    text_file = open("templates/Index.html", "a")
+    currentTime = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
+    fileName = "templates/report_generated_{}.html".format(currentTime)
+    text_file = open(fileName, "a")
 
     currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     textToWrite = '''
@@ -89,40 +91,40 @@ def makeFile():
             for j in range(nluEntities):
                 nlu_type = parsed_input["line{}".format(i)]["nlu"]["entity{}".format(j)]["type"]
                 nlu_text = parsed_input["line{}".format(i)]["nlu"]["entity{}".format(j)]["text"]
-                nlu_relevance = parsed_input["line{}".format(i)]["nlu"]["entity{}".format(j)]["relevance"]
+                nlu_relevance = 100*float(parsed_input["line{}".format(i)]["nlu"]["entity{}".format(j)]["relevance"])
                 tableData_nlu = '<h3>Natural Language Information</h3><table class="table table-striped"><tr><th>Type</th><th>Text</th><th>Relevance</th></tr><tr><td>{}</td><td>{}</td><td>{}</td></tr></table>'.format(
                     nlu_type, nlu_text, nlu_relevance)
                 text_file.write(tableData_nlu)
         elif nluEntities == 0:
             pass
         text = parsed_input["line{}".format(i)]["text"]
-        tone_emotion_anger = float(parsed_input["line{}".format(
+        tone_emotion_anger = 100*float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["anger"])
-        tone_emotion_joy = float(parsed_input["line{}".format(
+        tone_emotion_joy = 100*float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["joy"])
-        tone_emotion_fear = float(parsed_input["line{}".format(
+        tone_emotion_fear = 100*float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["fear"])
-        tone_emotion_sadness = float(parsed_input["line{}".format(
+        tone_emotion_sadness = 100*float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["sadness"])
-        tone_emotion_disguist = float(parsed_input["line{}".format(
+        tone_emotion_disguist = 100*float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["disgust"])
 
-        tone_social_extraversion = float(parsed_input["line{}".format(
+        tone_social_extraversion = 100*float(parsed_input["line{}".format(
             i)]["tone"]["social"]["extraversion_big5"])
-        tone_social_openness = float(parsed_input["line{}".format(
+        tone_social_openness = 100*float(parsed_input["line{}".format(
             i)]["tone"]["social"]["openness_big5"])
-        tone_social_conscientiousness = float(parsed_input["line{}".format(
+        tone_social_conscientiousness = 100*float(parsed_input["line{}".format(
             i)]["tone"]["social"]["conscientiousness_big5"])
-        tone_social_neuroticism = float(parsed_input["line{}".format(
+        tone_social_neuroticism = 100*float(parsed_input["line{}".format(
             i)]["tone"]["social"]["neuroticism_big5"])
-        tone_social_agreeableness = float(parsed_input["line{}".format(
+        tone_social_agreeableness = 100*float(parsed_input["line{}".format(
             i)]["tone"]["social"]["agreeableness_big5"])
 
-        tone_writing_analytical = float(parsed_input["line{}".format(
+        tone_writing_analytical = 100*float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["analytical"])
-        tone_writing_confident = float(parsed_input["line{}".format(
+        tone_writing_confident = 100*float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["confident"])
-        tone_writing_tentative = float(parsed_input["line{}".format(
+        tone_writing_tentative = 100*float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["tentative"])
 
         tableData_emotion = '<h3>Emotion Information</h3><table class="table table-striped"><tr><th>Anger</th><th>Joy</th><th>Fear</th><th>Sadness</th><th>Disguist</th></tr><tr><td>{}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr></table>'.format(
@@ -142,7 +144,7 @@ def makeFile():
 def openFile():
     currentTime = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
     fileName = "report_generated_{}".format(currentTime)
-    fileLocation = "file://{}/templates/{}.html}".format(os.getcwd(),fileName)
+    fileLocation = "file://{}/templates/{}.html".format(os.getcwd(),fileName)
     webbrowser.open(fileLocation, new=2)
 
 
