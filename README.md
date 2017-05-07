@@ -3,7 +3,13 @@
 
 ## Description
 
-
+Here in the United States, studies show that 10-35% of the population will exhibit domestic violence on their partners, 
+yet less than 1% of domestic violence cases are ever reported to police. This happens as a result of many different factors,
+as victims are often in love with the abuser, or have an intense fear of the abuser, or even may be financially dependent
+on the abuser. Some victims don't even view their current situation as a physically abusive relationship, keeping them stuck 
+in that unhealthy lifestyle for years. With our project "It's Disturbing", we use Watson's Speech and Text analysis API to
+detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, 
+specified trusted friends, health centers, or the police. 
 
 ### Tone Analyzer
 Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
