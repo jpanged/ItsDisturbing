@@ -68,7 +68,6 @@ function below
 
 def get_master_dictionary(my_file, type):
     master_dict = {}
-
     if type == "wav":   # .wav file
         my_text = my_file.split('\n')  # --> ['Line 1', 'Line 2', 'Line 3']
         num_lines = len(my_text)
