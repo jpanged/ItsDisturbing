@@ -13,7 +13,7 @@ speech_to_text = SpeechToTextV1(
 def wav_file_to_text():
    transcript = []
 
-   with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
+   with open(join(dirname(__file__), 'domestic.wav'), 'rb') as audio_file:
       output = (speech_to_text.recognize(
          audio_file, content_type='audio/wav', timestamps=False,
          word_confidence=False, continuous=True))
