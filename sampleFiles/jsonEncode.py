@@ -6,7 +6,6 @@ NLP_data = {
     'relevance': 0.3
 }
 
-
 tone_analysis = {
     'emotion': '',
     'writing': '',
@@ -16,15 +15,16 @@ tone_analysis = {
 
 tone_analysis_emotion = {
     'anger': '',
-    'disguist': '',
+    'disgust': '',
     'fear': '',
     'joy': '',
-    'saddness': ''
+    'sadness': ''
 }
+
 tone_analysis_writing = {
     'analytical': '',
     'confident': '',
-    'tennetative': ''
+    'tentative': ''
 }
 
 tone_analysis_social = {
@@ -36,15 +36,15 @@ tone_analysis_social = {
 }
 
 tone = {
-    'analysis' : tone_analysis,
+    'analysis': tone_analysis,
     'emotion': tone_analysis_emotion,
-    'writing' : tone_analysis_writing,
-    'social' : tone_analysis_social
+    'writing': tone_analysis_writing,
+    'social': tone_analysis_social
 }
 
 data = {
-    'NLP' : NLP_data,
-    'tone' : tone
+    'NLP': NLP_data,
+    'tone': tone
 
 }
 
