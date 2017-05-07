@@ -139,7 +139,7 @@ To install, use the command line.
 
 ```bash
 $ pip install watson_developer_cloud/
-$ git clone https://github.com/jpanged/siliconhacks2017/
+$ git clone https://github.com/jpanged/siliconhacks2017.git
 ```
 
 Once you have cloned the repository, navigate to the 'main_analyzer' directory.
