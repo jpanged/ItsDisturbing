@@ -14,7 +14,8 @@ def nlp(input_stuff):
     response = natural_language_understanding.analyze(
         text= input_stuff,
         features=[features.Entities(), features.Keywords()])
-
     return(response["entities"])
 
-print(nlp("I wanna go to the White House."))
+test = nlp("Bob is a great guy, and so is Dylan.")
+
+print(test[0]['type'])
