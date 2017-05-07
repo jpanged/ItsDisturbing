@@ -10,27 +10,83 @@ tone_analyzer = ToneAnalyzerV3(
 )
 
 def main():
-    my_file = open(argv[1], "r")
+    get_tone_dictionaries(argv[1])
+
+"""
+my_text is a str representing the .txt file the user wants to read from
+.txt file -> dict
+Returns a dictionary with corresponding emotion, writing, and social tone scores
+"""
+def get_tone_dictionaries(my_text):
+
+
+
+    my_file = open(my_text, "r")
+    curr_index = 0
+
     for line in my_file:
         print("\n\nline = {}".format(line))
-        output = tone_analyzer.tone(text = line)
-        #print output["document_tone"][0]["tones"][0]["score"]
-        for i in range(3):
-            tone_categories = output['document_tone']['tone_categories'][i]
-            category_id = tone_categories['category_id']
-            tones = tone_categories['tones']
-            print("\n{}".format(category_id))
+        tone_dict = get_tone_dict_per_line(line)
+        
+        line_output = {
+            'tone': tone_dict,
+            'text': line
+        }
+        print(line_output)
 
-            for j in range(len(tones)):
-                tone_name =  tones[j]['tone_name']
-                score =  tones[j]['score']
-                tone_id = tones[j]['tone_id']
-                print("{}: {}".format(tone_name, score))
+def get_tone_dict_per_line(line):
+
+    tone_analysis_emotion = {
+        'anger': '',
+        'disgust': '',
+        'fear': '',
+        'joy': '',
+        'sadness': ''
+    }
+
+    tone_analysis_writing = {
+        'analytical': '',
+        'confident': '',
+        'tentative': ''
+    }
+
+    tone_analysis_social = {
+        'openness_big5': '',
+        'conscientiousness_big5': '',
+        'extraversion_big5': '',
+        'agreeableness_big5': '',
+        'neuroticism_big5': ''
+    }
 
 
-def analyze(text):
-    out = tone_analyzer.tone(text)
-    return out
+    output = tone_analyzer.tone(text = line)
+    for i in range(3):
+        tone_categories = output['document_tone']['tone_categories'][i]
+        category_id = tone_categories['category_id']
+        tones = tone_categories['tones']
+        #print("\n{}".format(category_id))
+
+        for j in range(len(tones)):
+            tone_name =  tones[j]['tone_name']
+            score =  tones[j]['score']
+            tone_id = tones[j]['tone_id']
+            #print("{}: {}".format(tone_name, score))
+
+            if category_id == "emotion_tone":
+                tone_dict = tone_analysis_emotion
+            elif category_id == "writing_tone":
+                tone_dict = tone_analysis_writing
+            else:
+                tone_dict = tone_analysis_social
+            tone_dict[tone_id] = score
+
+    tone = {
+        'emotion': tone_analysis_emotion,
+        'writing': tone_analysis_writing,
+        'social': tone_analysis_social
+    }
+
+    return tone
 
 if __name__ == "__main__":
     main()
