@@ -21,14 +21,18 @@ Presents user with menu of options
 def menu():
     user_inp = argv[1]
     #user_inp = raw_input("\nEnter your .wav file or .txt file: ")
-    if user_inp.endswith(".wav"):
-        transcript_str = wav_file_to_text(user_inp)
-        outFile = get_master_dictionary(transcript_str, "wav")
-    elif user_inp.endswith(".txt"):
-        outFile = get_master_dictionary(user_inp, "txt")
-    else:
-        print("Error: invalid file. Must be .wav or .txt")
-    output.outPutFile(outFile)
+    try:
+        if user_inp.endswith(".wav"):
+            transcript_str = wav_file_to_text(user_inp)
+            outFile = get_master_dictionary(transcript_str, "wav")
+        elif user_inp.endswith(".txt"):
+            outFile = get_master_dictionary(user_inp, "txt")
+        else:
+            raise Exception
+        output.outPutFile(outFile)
+    except:
+        print("ERROR: Must be a .wav or .txt file in the following format:")
+        print("python main_analyzer.py <FILE>")
 
 
 """
