@@ -1,8 +1,8 @@
 import json
-import requests
+#import requests
 import urllib.request
 json_bytes = urllib.request.urlopen(
-    "https://fs.fire-light.us/siliconHacks/jsonDataSample.txt").read()
+    "http://fs.fire-light.us/siliconHacks/jsonDataSample.txt").read()
 
 input_data = json_bytes.decode("utf-8")
 # This converts from JSON to a python dict
