@@ -10,9 +10,9 @@ def main():
 
 def nlp(input_stuff):
     natural_language_understanding = NaturalLanguageUnderstandingV1(
-        version='2017-02-27',
-        username='93f6afbe-f487-4f2a-847c-5972d0aaff35',
-        password='3Bntz00f6MCI')
+        version = '2017-02-27',
+        username = "83e901c3-bc9c-43f8-af70-c836d0cd0ea0",
+        password = "yDEjfUUEeHBz")
 
     response = natural_language_understanding.analyze(
         text= input_stuff,
