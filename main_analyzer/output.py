@@ -25,6 +25,20 @@ def makeFile(input_data):
 
     currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
+    tot_anger = []
+    tot_joy = []
+    tot_fear = []
+    tot_sadness = []
+    tot_disgust = []
+    tot_extraversion = []
+    tot_openness = []
+    tot_conscientiousness = []
+    tot_neuroticism = []
+    tot_agreeableness = []
+    tot_analytical = []
+    tot_confident = []
+    tot_tentative = []
+
     numberElements = int(parsed_input["num_lines"])
     for i in range(numberElements):
         nluEntities = parsed_input["line{}".format(
@@ -101,32 +115,45 @@ def makeFile(input_data):
         text = parsed_input["line{}".format(i)]["text"]
         tone_emotion_anger = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["anger"])
+        tot_anger.append(tone_emotion_anger)
         tone_emotion_joy = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["joy"])
+        tot_joy.append(tone_emotion_joy)
         tone_emotion_fear = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["fear"])
+        tot_fear.append(tone_emotion_fear)
         tone_emotion_sadness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["sadness"])
+        tot_sadness.append(tone_emotion_sadness)
         tone_emotion_disguist = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["emotion"]["disgust"])
+        tot_disgust.append(tone_emotion_disgust)
 
         tone_social_extraversion = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["extraversion_big5"])
+        tot_extraversion.append(tone_emotion_extraversion)
         tone_social_openness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["openness_big5"])
+        tot_openness.append(tone_emotion_openness)
         tone_social_conscientiousness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["conscientiousness_big5"])
+        tot_disgust.append(tone_emotion_disgust)
         tone_social_neuroticism = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["neuroticism_big5"])
+        tot_neuroticism.append(tone_emotion_neuroticism)
         tone_social_agreeableness = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["social"]["agreeableness_big5"])
+        tot_agreeableness.append(tone_emotion_agreeableness)
 
         tone_writing_analytical = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["analytical"])
+        tot_analytical.append(tone_emotion_analytical)
         tone_writing_confident = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["confident"])
+        tot_confident.append(tone_emotion_confident)
         tone_writing_tentative = 100 * float(parsed_input["line{}".format(
             i)]["tone"]["writing"]["tentative"])
+        tot_tentative.append(tone_emotion_tentative)
 
         totalData = '''
 
