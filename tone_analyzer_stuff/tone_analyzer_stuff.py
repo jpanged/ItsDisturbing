@@ -15,7 +15,17 @@ def main():
         print("\n\nline = {}".format(line))
         output = tone_analyzer.tone(text = line)
         #print output["document_tone"][0]["tones"][0]["score"]
-        print(json.dumps(tone_analyzer.tone(text = line), indent = 2))
+        for i in range(3):
+            tone_categories = output['document_tone']['tone_categories'][i]
+            category_id = tone_categories['category_id']
+            tones = tone_categories['tones']
+            print("\n{}".format(category_id))
+
+            for j in range(len(tones)):
+                tone_name =  tones[j]['tone_name']
+                score =  tones[j]['score']
+                tone_id = tones[j]['tone_id']
+                print("{}: {}".format(tone_name, score))
 
 
 def analyze(text):

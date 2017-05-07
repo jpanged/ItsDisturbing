@@ -4,18 +4,16 @@ from watson_developer_cloud import SpeechToTextV1
 
 
 speech_to_text = SpeechToTextV1(
-    username= "587aae79-5967-434b-93c4-3c4bd3f40621",
-    password= "AnPJuMD0GjYE",
-    x_watson_learning_opt_out=False
+   username= "587aae79-5967-434b-93c4-3c4bd3f40621",
+   password= "AnPJuMD0GjYE",
+   x_watson_learning_opt_out=False
 )
 
-print(json.dumps(speech_to_text.models(), indent=2))
+with open(join(dirname(__file__), 'speech.wav'), 'rb') as audio_file:
+   output = (speech_to_text.recognize(
+      audio_file, content_type='audio/wav', timestamps=True,
+      word_confidence=True))
 
-print(json.dumps(speech_to_text.get_model('en-US_BroadbandModel'), indent=2))
+   transcript = output['results'][0]['alternatives'][0]['transcript']
+print(transcript)
 
-with open(join(dirname(__file__), 'speech.wav'),
-          'rb') as audio_file:
-    print(json.dumps(speech_to_text.recognize(
-        audio_file, content_type='audio/wav', timestamps=True,
-        word_confidence=True),
-        indent=2))
