@@ -11,19 +11,27 @@ Watson's Tone Analyzer tool helps people understand tone along three major categ
 Emotional tone measures different types of emotions and feelings that people express.
 
 ####    Joy
-    Joy or happiness has shades of enjoyment, satisfaction and pleasure. There is a sense of well-being, inner peace, love, safety and contentment.
+    Joy or happiness has shades of enjoyment, satisfaction and pleasure.
+    There is a sense of well-being, inner peace, love, safety and contentment.
 
 ####    Fear
-    A response to impending danger. It is a survival mechanism that is a reaction to some negative stimulus. It may be a mild caution or an extreme phobia.
+    A response to impending danger.
+    It is a survival mechanism that is a reaction to some negative stimulus.
+    It may be a mild caution or an extreme phobia.
     
 ####    Sadness
-    Indicates a feeling of loss and disadvantage. When a person can be observed to be quiet, less energetic and withdrawn, it may be inferred that sadness exists.
+    Indicates a feeling of loss and disadvantage.
+    When a person can be observed to be quiet, less energetic and withdrawn.
+    It may be inferred that sadness exists.
     
 ####    Disgust
-    An emotional response of revulsion to something considered offensive or unpleasant. It is a sensation that refers to something revolting.
+    An emotional response of revulsion to something considered offensive or unpleasant.
+    It is a sensation that refers to something revolting.
     
 ####    Anger
-      Evoked due to injustice, conflict, humiliation, negligence or betrayal. If anger is active, the individual attacks the target, verbally or physically. If anger is passive, the person silently sulks and feels tension and hostility.
+      Evoked due to injustice, conflict, humiliation, negligence or betrayal.
+      If anger is active, the individual attacks the target, verbally or physically.
+      If anger is passive, the person silently sulks and feels tension and hostility.
     
     
 
