@@ -83,7 +83,7 @@ Describes perceived writing style.
 Watson quantifies emotion using the five factor model (FFM) aka the Big Five personality traits:
 
 ####    Openness
-    The extent a person is open to experience a variety of activities.
+    The extent a person is willing to experience a variety of activities.
 | Low Scores    | High Scores   |
 | ------------- |:------------- |
 | Down-to-earth | Imaginative   |
