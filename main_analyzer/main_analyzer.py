@@ -1,5 +1,7 @@
 import json
 from sys import *
+from os.path import join, dirname
+from watson_developer_cloud import SpeechToTextV1
 from watson_developer_cloud import ToneAnalyzerV3
 from watson_developer_cloud import NaturalLanguageUnderstandingV1
 import watson_developer_cloud.natural_language_understanding.features.v1 as \
@@ -8,6 +10,19 @@ import watson_developer_cloud.natural_language_understanding.features.v1 as \
 
 def main():
     get_master_dictionary(argv[1])
+
+"""
+Presents user with menu of options
+"""
+def menu():
+    user_select = input("\nEnter your .wav file or .txt file:\n")
+    if user_select.endswith(".wav"):
+        pass
+    elif user_select.endswith(".txt"):
+        pass
+    else:
+        print("Invalid option")
+        menu()
 
 """
 my_text is a str representing the .txt file the user wants to read from
@@ -41,6 +56,35 @@ def get_master_dictionary(my_text):
     return master_dict
 
 
+speech_to_text = SpeechToTextV1(
+   username = "587aae79-5967-434b-93c4-3c4bd3f40621",
+   password = "AnPJuMD0GjYE",
+   x_watson_learning_opt_out = False
+)
+
+def wav_file_to_text():
+    transcript = []
+
+    with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
+       output = (speech_to_text.recognize(
+          audio_file, content_type='audio/wav', timestamps=False,
+          word_confidence=False, continuous=True))
+
+       for i in range((len(output['results']))):
+          transcript.append(output['results'][i]['alternatives'][0]['transcript'])
+
+       index = []
+       for j in range(1, len(transcript) + 1):
+          index.append(("line" + str(j)))
+
+       list1 = []
+       for k in range(len(transcript)):
+          t = index[k], transcript[k]
+          list1.append(t)
+
+       d = dict(list1)
+
+    return d
 
 tone_analyzer = ToneAnalyzerV3(
     username = '177e2d8a-1048-4fcc-b256-022adbc2fc6b',
@@ -48,7 +92,6 @@ tone_analyzer = ToneAnalyzerV3(
     #url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
     version = '2016-05-06'
 )
-
 
 """
 a line is a str representing one line of the .txt file
