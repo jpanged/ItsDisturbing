@@ -1,6 +1,9 @@
 # It's Disturbing
 ### Is it?
 
+![logo](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/bluemix-logo-right.png)
+
+
 ## Description
 Here in the United States, studies show that 10-35% of the population will exhibit domestic violence on their partners, 
 yet less than 1% of domestic violence cases are ever reported to police. This is a result of many different factors,
