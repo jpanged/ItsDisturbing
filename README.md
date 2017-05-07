@@ -1,6 +1,9 @@
 # It's Disturbing
 ### Is it?
 
+![logo](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/bluemix-logo-right.png)
+
+
 ## Description
 Here in the United States, studies show that 10-35% of the population will exhibit domestic violence on their partners, 
 yet less than 1% of domestic violence cases are ever reported to police. This is a result of many different factors,
@@ -10,6 +13,8 @@ in that unhealthy lifestyle for years.
 
 Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
 
+
+![toneicon](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/nlu.png)
 ## Natural Language Understanding
 The IBM Watson™ Natural Language Understanding service uses natural language processing to analyze semantic features of any text.
 
@@ -24,7 +29,7 @@ Identify people, cities, organizations, and many other types of entities in your
 | Count     | Number of times the entity is mentioned in the text                                                     |
 
 
-
+![toneicon](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/toneanalyzer.png)
 ## Tone Analyzer
 The IBM Watson™ Tone Analyzer service uses linguistic analysis to detect communication tones in written text along three major categories: emotion, language, and social.
 
@@ -128,6 +133,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Unemotional   | Emotional      |
 
 
+![toneicon](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/speechtotext.png)
 ## Speech to Text
 The IBM Watson™ Speech to Text service enables speech recognition capabilities.
 The service transcribes speech from various languages and audio formats to text with low latency.
