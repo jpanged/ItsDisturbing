@@ -131,3 +131,26 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 ## Speech to Text
 The IBM Watson™ Speech to Text service enables speech recognition capabilities.
 The service transcribes speech from various languages and audio formats to text with low latency.
+
+
+## Installation
+
+To install, use the command line.
+
+```bash
+$ pip install watson_developer_cloud/
+$ git clone https://github.com/jpanged/siliconhacks2017/
+```
+
+Once you have cloned the repository, navigate to the 'main_analyzer' directory.
+
+```bash
+$ cd main_analyzer/
+$ cd main_analyzer.py .WAV_FILE
+```
+or
+
+```bash
+$ cd main_analyzer/
+$ cd main_analyzer.py .TXT_FILE
+```
