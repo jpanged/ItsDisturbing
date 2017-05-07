@@ -3,45 +3,45 @@
 ## Description
 
 
-###Tone Analyzer
+### Tone Analyzer
 Watson's Tone Analyzer tool helps people understand tone along three major categories: emotional, social, and language.
 
-###Emotion
+### Emotion
 Emotional tone measures different types of emotions and feelings that people express.
 
-#####- Joy
+#####    Joy
     *Joy or happiness has shades of enjoyment, satisfaction and pleasure. There is a sense of well-being, inner peace, love, safety and contentment.*
 
-#####- Fear
+#####    Fear
     *A response to impending danger. It is a survival mechanism that is a reaction to some negative stimulus. It may be a mild caution or an extreme phobia.*
     
-#####- Sadness
+#####    Sadness
     *Indicates a feeling of loss and disadvantage. When a person can be observed to be quiet, less energetic and withdrawn, it may be inferred that sadness exists.*
     
-#####- Disgust
+#####    Disgust
     *An emotional response of revulsion to something considered offensive or unpleasant. It is a sensation that refers to something revolting.*
     
-#####- Anger
+#####    Anger
     *Evoked due to injustice, conflict, humiliation, negligence or betrayal. If anger is active, the individual attacks the target, verbally or physically. If anger is passive, the person silently sulks and feels tension and hostility.*
     
     
 
-###Langauge
+### Langauge
 Describes perceived writing style.
 
-#####- Analytical
+#####    Analytical
     *A person's reasoning and analytical attitude about things.*
-| Low Scores                                | High Scores                                                 |
-| ----------------------------------------- |:-----------------------------------------------------------:|
-| Little or no evidence of analytical tone. | Intellectual, rational, systematic, emotionless, impersonal |
+ Low Scores                                | High Scores                                                 |
+ ----------------------------------------- |:-----------------------------------------------------------:|
+ Little or no evidence of analytical tone. | Intellectual, rational, systematic, emotionless, impersonal |
 
-#####- Confidence
+#####    Confidence
     *A person's degree of certainty.*
 | Low Scores                                   | High Scores                              |
 | -------------------------------------------- |:----------------------------------------:|
 | Little or no evidence of confidence in tone. | Assured, collected, hopeful, egotistical |
 
-#####- Tentative
+#####    Tentative
     *A person's degree of inhibition.*
 | Low Scores                                      | High Scores                          |
 | ----------------------------------------------- |:------------------------------------:|
@@ -49,10 +49,10 @@ Describes perceived writing style.
 
 
 
-###Social
+### Social
 Watson quantifies emotion using the five factor model (FFM) aka the Big Five personality traits:
 
-#####- Openness
+#####    Openness
     *The extent a person is open to experience a variety of activities.*
 | Low Scores    | High Scores   |
 | ------------- |:-------------:|
@@ -61,7 +61,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Conventional  | Original      |
 | Uncurious     | Curious       |
   
-#####- Conscientiousness
+#####    Conscientiousness
     *The tendency to act in an organized or thoughtful way.*
 | Low Scores    | High Scores    |
 | ------------- |:--------------:|
@@ -70,7 +70,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Disorganized  | Well-organized |
 | Late          | Punctual       |
 
-#####- Extraversion
+#####    Extraversion
     *The tendency to seek stimulation in the company of others.*
 | Low Scores    | High Scores   |
 | ------------- |:-------------:|
@@ -79,7 +79,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Passive       | Active        |
 | Reserved      | Affectionate  |
 
-#####- Agreeableness
+#####    Agreeableness
     *The tendency to be compassionate and cooperative towards others.*
 | Low Scores    | High Scores   |
 | ------------- |:-------------:|
@@ -88,7 +88,7 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 | Ruthless      | Soft-hearted  |
 | Irritable     | Good-natured  |
 
-#####- Neuroticism
+#####    Neuroticism
     *The extent a person's emotion is sensitive to the environment.*
 | Low Scores    | High Scores    |
 | ------------- |:--------------:|
