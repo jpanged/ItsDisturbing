@@ -35,6 +35,9 @@ function below
 def get_master_dictionary(my_text):
     master_dict = {}
     my_file = open(my_text, "r")
+
+    num_lines = sum(1 for line in open(my_text, "r"))
+    master_dict['num_lines'] = num_lines
     curr_index = 0
 
     for line in my_file:
@@ -171,6 +174,7 @@ Returns a dictionary with corresponding type, text, relevance, count values
 def get_nlu_dict_per_line(line):
     nlu_dict = {}
     output = nlp(line)
+    nlu_dict['nlu_entity_items'] = len(output)
     for i in range(len(output)):
         entity_dict = {
             'type': '',
@@ -185,7 +189,7 @@ def get_nlu_dict_per_line(line):
         entity_dict['relevance'] = entity['relevance']
         entity_dict['count'] = entity['count']
 
-        en_dict_name = "entity" + str(i+1)
+        en_dict_name = "entity" + str(i)
         nlu_dict[en_dict_name] = entity_dict
 
     return nlu_dict
