@@ -1,9 +1,9 @@
 import json
 
 NLP_data = {
-    'tone': '',
-    'text': '',
-    'relevance': ''
+    'type': 'Person',
+    'text': 'Dylan',
+    'relevance': '0.33'
 }
 
 speech_to_text = {
