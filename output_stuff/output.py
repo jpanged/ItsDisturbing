@@ -67,7 +67,7 @@ def makeFile():
                               <td width="40%">
 
                                 <div class="progress">
-                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {2:f}%">
+                                  <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {2:f}%">
 
                                   </div>
                                 </div>
@@ -156,7 +156,7 @@ def makeFile():
                     <td width="40%">
 
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {2:f}%">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{2:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {2:f}%">
 
                         </div>
                       </div>
@@ -174,7 +174,7 @@ def makeFile():
                     <td width="40%">
 
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{3:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {3:f}%">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{3:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {3:f}%">
 
                         </div>
                       </div>
@@ -192,7 +192,7 @@ def makeFile():
                     <td width="40%">
 
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{4:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {4:f}%">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{4:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {4:f}%">
 
                         </div>
                       </div>
@@ -210,7 +210,7 @@ def makeFile():
                     <td width="40%">
 
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{5:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {5:f}%">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{5:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {5:f}%">
 
                         </div>
                       </div>
@@ -227,7 +227,7 @@ def makeFile():
                     <td width="40%">
 
                       <div class="progress">
-                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{6:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {6:f}%">
+                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{6:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {6:f}%">
 
                         </div>
                       </div>
@@ -270,7 +270,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{7:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {7:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{7:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {7:f}%">
 
                       </div>
                     </div>
@@ -288,7 +288,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{8:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {8:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{8:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {8:f}%">
 
                       </div>
                     </div>
@@ -306,7 +306,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{9:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {9:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{9:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {9:f}%">
 
                       </div>
                     </div>
@@ -324,7 +324,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{10:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {10:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{10:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {10:f}%">
 
                       </div>
                     </div>
@@ -341,7 +341,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{11:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {11:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{11:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {11:f}%">
 
                       </div>
                     </div>
@@ -384,7 +384,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{12:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {12:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{12:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {12:f}%">
 
                       </div>
                     </div>
@@ -402,7 +402,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{13:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {13:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{13:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {13:f}%">
 
                       </div>
                     </div>
@@ -420,7 +420,7 @@ def makeFile():
                   <td width="40%">
 
                     <div class="progress">
-                      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{14:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {14:f}%">
+                      <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{14:.2f}" aria-valuemin="0" aria-valuemax="100" style="width: {14:f}%">
 
                       </div>
                     </div>
@@ -483,8 +483,11 @@ def makeFile():
     					Generated Report
     				</h2>
               <p>
-                This report was generated on {} by [PRG_NAME]
+                This report was generated on {} by [It's Disturbing],
               </p>
+              <h6>
+                by Alex Garcia, Celestine Co, Dominic Gaiero, & Josiah Pang
+            </h6>
               <p>
                 <a class="btn btn-primary btn-large" href="#">Save report</a>
               </p>
