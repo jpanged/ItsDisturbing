@@ -9,14 +9,15 @@ speech_to_text = SpeechToTextV1(
    x_watson_learning_opt_out=False
 )
 
+transcript = []
+
 with open(join(dirname(__file__), 'beemovie.wav'), 'rb') as audio_file:
-   output = json.dumps((speech_to_text.recognize(
+   output = (speech_to_text.recognize(
       audio_file, content_type='audio/wav', timestamps=False,
-      word_confidence=True)), indent=2)
+      word_confidence=False, continuous=True))
 
-'''
-   transcript = output['results'][0]['alternatives'][0]['transcript']
-'''
+   for i in range((len(output['results']))):
+      transcript.append(output['results'][i]['alternatives'][0]['transcript'])
 
-print(output)
+print(transcript)
 
