@@ -21,7 +21,7 @@ def makeFile(input_data):
     global fileTime
     fileTime = datetime.datetime.now().strftime("%Y_%m_%d_%H_%M")
     fileName = "templates/report_generated_{}.html".format(fileTime)
-    text_file = open(fileName, "a")
+    text_file = open(fileName, "a+")
 
     currentTime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
 
