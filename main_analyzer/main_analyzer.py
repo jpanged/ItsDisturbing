@@ -30,7 +30,7 @@ def menu():
         else:
             raise Exception
         output.outPutFile(outFile)
-    except ImportError:
+    except Exception:
         print("ERROR: Must be a .wav or .txt file in the following format:")
         print("python main_analyzer.py <FILE>")
 
