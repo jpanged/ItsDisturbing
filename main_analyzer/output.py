@@ -4,7 +4,108 @@ import datetime
 import json
 
 the_data = []
-# input_data = """{"num_lines": 11, "line0": {"text": "They ran out of yogurt at the store", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.332842, "disgust": 0.032106, "fear": 0.189564, "joy": 0.042066, "sadness": 0.433558}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.607778, "conscientiousness_big5": 0.532194, "extraversion_big5": 0.36527, "agreeableness_big5": 0.408635, "neuroticism_big5": 0.815845}}}, "line1": {"text": "I can't believe you did this to me", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.070895, "disgust": 0.53588, "fear": 0.085751, "joy": 0.015509, "sadness": 0.398202}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.88939}, "social": {"openness_big5": 0.001908, "conscientiousness_big5": 0.552716, "extraversion_big5": 0.170601, "agreeableness_big5": 0.7794, "neuroticism_big5": 0.041148}}}, "line2": {"text": "Rain makes me feel less alon", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.134344, "disgust": 0.01924, "fear": 0.433093, "joy": 0.019464, "sadness": 0.444153}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.75152}, "social": {"openness_big5": 0.021653, "conscientiousness_big5": 0.23409, "extraversion_big5": 0.460403, "agreeableness_big5": 0.595923, "neuroticism_big5": 0.002504}}}, "line3": {"text": "He could only consider me as the living corpse of a would-be suicide, a person dead to shame, an idiot ghost", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.193647, "disgust": 0.323069, "fear": 0.03294, "joy": 3.4e-05, "sadness": 0.565851}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.471477}, "social": {"openness_big5": 0.681763, "conscientiousness_big5": 0.010776, "extraversion_big5": 0.15682, "agreeableness_big5": 0.512846, "neuroticism_big5": 0.276494}}}, "line4": {"text": "What if I just want to die", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.336639, "disgust": 0.157712, "fear": 0.058749, "joy": 0.002626, "sadness": 0.539582}, "writing": {"analytical": 0.801827, "confident": 0.0, "tentative": 0.91961}, "social": {"openness_big5": 0.235004, "conscientiousness_big5": 0.303431, "extraversion_big5": 0.07113, "agreeableness_big5": 0.60043, "neuroticism_big5": 0.074935}}}, "line5": {"text": "I can't take it anymore", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.099987, "disgust": 0.077772, "fear": 0.231003, "joy": 0.003219, "sadness": 0.65732}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.003774, "conscientiousness_big5": 0.260345, "extraversion_big5": 0.048625, "agreeableness_big5": 0.433571, "neuroticism_big5": 0.008086}}}, "line6": {"text": "I will not allow this", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.356441, "disgust": 0.034403, "fear": 0.418217, "joy": 0.01555, "sadness": 0.257707}, "writing": {"analytical": 0.882284, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.270438, "conscientiousness_big5": 0.487677, "extraversion_big5": 0.022418, "agreeableness_big5": 0.649679, "neuroticism_big5": 0.24117}}}, "line7": {"text": "This is out of control", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.350118, "disgust": 0.168979, "fear": 0.170767, "joy": 0.023977, "sadness": 0.374915}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.89945, "conscientiousness_big5": 0.370109, "extraversion_big5": 0.585703, "agreeableness_big5": 0.435971, "neuroticism_big5": 0.21098}}}, "line8": {"text": "I'm so scared", "nlu": {"nlu_entity_items": 0}, "tone": {"emotion": {"anger": 0.9, "disgust": 0.0, "fear": 0.9, "joy": 0.0, "sadness": 0.0}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.083603, "conscientiousness_big5": 0.272945, "extraversion_big5": 0.522652, "agreeableness_big5": 0.595476, "neuroticism_big5": 0.0659}}}, "line9": {"text": "Bob is a fun guy", "nlu": {"nlu_entity_items": 1, "entity0": {"type": "Person", "text": "Bob", "relevance": 0.33, "count": 2}}, "tone": {"emotion": {"anger": 0.016145, "disgust": 0.050057, "fear": 0.02948, "joy": 0.638583, "sadness": 0.122409}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.593309, "conscientiousness_big5": 0.246205, "extraversion_big5": 0.763329, "agreeableness_big5": 0.603691, "neuroticism_big5": 0.582389}}}, "line10": {"text": "I want to go to Niagara Falls", "nlu": {"nlu_entity_items": 1, "entity0": {"type": "GeographicFeature", "text": "Niagara Falls", "relevance": 0.33, "count": 1}}, "tone": {"emotion": {"anger": 0.0602, "disgust": 0.033832, "fear": 0.352245, "joy": 0.011553, "sadness": 0.591556}, "writing": {"analytical": 0.0, "confident": 0.0, "tentative": 0.0}, "social": {"openness_big5": 0.0561, "conscientiousness_big5": 0.278882, "extraversion_big5": 0.600057, "agreeableness_big5": 0.626184, "neuroticism_big5": 0.315676}}}}"""
+input_data = """{
+  "num_lines": 3,
+  "summary": "according to honor laws aviation there is no way P. should be able to fly its wings are too small to get its fat little body off the ground wanna kill you Alex ",
+  "lines": [
+    {
+      "line": {
+        "text": "according to honor laws aviation there is no way P. should be able to fly ",
+        "hash": "f363fea27a2171ec2ab3823c09990f6e",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.039552,
+            "disgust": 0.106574,
+            "fear": 0.161657,
+            "joy": 0.049043,
+            "sadness": 0.124611
+          },
+          "writing": {
+            "analytical": 0.904038,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.292165,
+            "conscientiousness_big5": 0.763999,
+            "extraversion_big5": 0.660921,
+            "agreeableness_big5": 0.671976,
+            "neuroticism_big5": 0.967221
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": "its wings are too small to get its fat little body off the ground ",
+        "hash": "1ae222a221d64538a878d46649e5f468",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.193606,
+            "disgust": 0.437186,
+            "fear": 0.325455,
+            "joy": 0.021466,
+            "sadness": 0.321767
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.309621,
+            "conscientiousness_big5": 0.342797,
+            "extraversion_big5": 0.37454,
+            "agreeableness_big5": 0.26146,
+            "neuroticism_big5": 0.342685
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": "wanna kill you Alex",
+        "hash": "492465e206ac6aa56a940cf02b109b6c",
+        "nlu": {
+          "nlu_entity_items": 1,
+          "entity0": {
+            "type": "Person",
+            "text": "Alex",
+            "relevance": 0.33,
+            "count": 1
+          }
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.756906,
+            "disgust": 0.135541,
+            "fear": 0.117287,
+            "joy": 0.012102,
+            "sadness": 0.21201
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.056399,
+            "conscientiousness_big5": 0.286041,
+            "extraversion_big5": 0.443854,
+            "agreeableness_big5": 0.545598,
+            "neuroticism_big5": 0.120981
+          }
+        }
+      }
+    }
+  ]
+}"""
 
 
 def makeFile(input_data):
@@ -40,17 +141,16 @@ def makeFile(input_data):
     tot_tentative = []
 
     numberElements = int(parsed_input["num_lines"])
+    print(type(parsed_input))
+    print(parsed_input["lines"][2]["line"]["nlu"])
     for i in range(numberElements):
-        nluEntities = parsed_input["line{}".format(
-            i)]["nlu"]["nlu_entity_items"]
+        nluEntities = parsed_input["lines"][i]["line"]["nlu"]["nlu_entity_items"]
         if nluEntities != 0:
             for j in range(nluEntities):
-                nlu_type = parsed_input["line{}".format(
-                    i)]["nlu"]["entity{}".format(j)]["type"]
-                nlu_text = parsed_input["line{}".format(
-                    i)]["nlu"]["entity{}".format(j)]["text"]
+                nlu_type = parsed_input["lines"][i]["line"]["nlu"]["entity{}".format(j)]["type"]
+                nlu_text = parsed_input["lines"][i]["line"]["nlu"]["entity{}".format(j)]["text"]
                 nlu_relevance = 100 * \
-                    float(parsed_input["line{}".format(i)]
+                    float(parsed_input["lines"][i]["line"]
                           ["nlu"]["entity{}".format(j)]["relevance"])
                 tableData_nlu = '''
 
@@ -112,83 +212,83 @@ def makeFile(input_data):
                 big_string = big_string + tableData_nlu
         elif nluEntities == 0:
             pass
-        text = parsed_input["line{}".format(i)]["text"]
+        text = parsed_input["lines"][i]["line"]["text"]
         str_to_ret = ""
 
-        tone_emotion_anger = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["anger"])
+        tone_emotion_anger = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["emotion"]["anger"])
         if tone_emotion_anger > 40.0:
             str_to_ret += "<br>Anger: the response to injustice, conflict, humiliation, negligence or betrayal."
         tot_anger.append(tone_emotion_anger)
 
-        tone_emotion_joy = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["joy"])
+        tone_emotion_joy = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["emotion"]["joy"])
         if tone_emotion_joy > 40.0:
             str_to_ret += "<br>Joy: the response to enjoyment, satisfaction, and pleasure"
         tot_joy.append(tone_emotion_joy)
 
-        tone_emotion_fear = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["fear"])
+        tone_emotion_fear = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["emotion"]["fear"])
         if tone_emotion_fear > 40.0:
             str_to_ret += "<br>Fear: the response to impending danger"
         tot_fear.append(tone_emotion_fear)
 
-        tone_emotion_sadness = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["sadness"])
+        tone_emotion_sadness = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["emotion"]["sadness"])
         if tone_emotion_sadness > 40.0:
             str_to_ret += "<br>Sadness: the response to loss and disadvantage"
         tot_sadness.append(tone_emotion_sadness)
 
-        tone_emotion_disgust = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["emotion"]["disgust"])
+        tone_emotion_disgust = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["emotion"]["disgust"])
         if tone_emotion_disgust > 40.0:
             str_to_ret += "<br>Disgust: the response to something offensive or unpleasant"
         tot_disgust.append(tone_emotion_disgust)
 
-        tone_social_extraversion = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["social"]["extraversion_big5"])
+        tone_social_extraversion = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["social"]["extraversion_big5"])
         if tone_social_extraversion > 40.0:
             str_to_ret += "<br>Extraversion: the tendency to seek stimulation in the company of others"
         tot_extraversion.append(tone_social_extraversion)
 
-        tone_social_openness = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["social"]["openness_big5"])
+        tone_social_openness = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["social"]["openness_big5"])
         if tone_social_openness > 40.0:
             str_to_ret += "<br>Openness: the extent a person is willing to experience a variety of activities"
         tot_openness.append(tone_social_openness)
 
-        tone_social_conscientiousness = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["social"]["conscientiousness_big5"])
+        tone_social_conscientiousness = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["social"]["conscientiousness_big5"])
         if tone_social_conscientiousness > 40.0:
             str_to_ret += "<br>Conscientiousness: the tendency to act in an organized or thoughtful way"
         tot_disgust.append(tone_social_conscientiousness)
 
-        tone_social_neuroticism = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["social"]["neuroticism_big5"])
+        tone_social_neuroticism = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["social"]["neuroticism_big5"])
         if tone_social_neuroticism > 40.0:
             str_to_ret += "<br>Neuroticism: the extent a person's emotion is sensitive to the environment"
         tot_neuroticism.append(tone_social_neuroticism)
 
-        tone_social_agreeableness = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["social"]["agreeableness_big5"])
+        tone_social_agreeableness = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["social"]["agreeableness_big5"])
         if tone_social_agreeableness > 40.0:
             str_to_ret += "<br>Agreeableness: the tendency to be compassionate and cooperative towards others"
         tot_agreeableness.append(tone_social_agreeableness)
 
-        tone_writing_analytical = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["writing"]["analytical"])
+        tone_writing_analytical = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["writing"]["analytical"])
         if tone_writing_analytical > 40.0:
             str_to_ret += "<br>Analytical: a person's reasoning and analytical attitude about things"
         tot_analytical.append(tone_writing_analytical)
 
-        tone_writing_confident = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["writing"]["confident"])
+        tone_writing_confident = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["writing"]["confident"])
         if tone_writing_confident > 40.0:
             str_to_ret += "<br>Confident: a person's degree of certainty"
         tot_confident.append(tone_writing_confident)
 
-        tone_writing_tentative = 100 * float(parsed_input["line{}".format(
-            i)]["tone"]["writing"]["tentative"])
+        tone_writing_tentative = 100 * float(parsed_input["lines"][i]["line"]
+            ["tone"]["writing"]["tentative"])
         if tone_writing_tentative > 40.0:
             str_to_ret += "<br>Tentative: a person's degree of inhibition"
         tot_tentative.append(tone_writing_tentative)
