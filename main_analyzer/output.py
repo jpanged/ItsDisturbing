@@ -624,7 +624,7 @@ def makeFile(input_data):
 
 
         <div class="well">
-          <h3>Recgonized Text: {0:s}</h3>
+          <h3>Recognized Text: {0:s}</h3>
           <p>{1:s}</p>
           <div class="panel panel-default">
             <div class="panel-heading">
