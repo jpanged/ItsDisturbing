@@ -6,18 +6,29 @@ Watson Cloud analyzes data to determine:
 * Tone
 * Content
 
+
+
+Web Input
+* Take audio input
+* Convert to correct format
+* Run python script
+
+Web Output
+* Take input (GET request)
+* Process input and add to mySQL database
+* Return unique key that can access specific value
+
+Web report
+* Audio file playback
+* All pertinant data
+* PDF link (to download PDF)
+
 Output report (PDF)
 * Voice to text transcription of event
 * What data contains
 * Red flags
 * Possible actions that can be taken (and why they should be taken)
-
-Log output to database
-
-
-Web Output
-* Browse logs
-* Listen to input
+* Maybe use LaTeX to make things easier??
 
 
 Objectives:
