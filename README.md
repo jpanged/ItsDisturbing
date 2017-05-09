@@ -1,6 +1,10 @@
 # It's Disturbing
 ### Is it?
 
+UPDATE: Winner of SiliconHacks 2017 Most Technically Challenging Hack & #HackHarassment Challenge (Solution against online harassment)
+
+HackerEarth Submission: https://siliconhacks.hackerearth.com/sprints/siliconhacks/dashboard/pleasantonAndThePlebs/submission/
+
 ![logo](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/bluemix-logo-right.png)
 
 
