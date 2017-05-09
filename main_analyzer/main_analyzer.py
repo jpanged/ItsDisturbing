@@ -7,7 +7,7 @@ from watson_developer_cloud import NaturalLanguageUnderstandingV1
 import watson_developer_cloud.natural_language_understanding.features.v1 as \
     features
 import output
-
+import hashlib
 
 def main():
     menu()
@@ -30,7 +30,7 @@ def menu():
         else:
             raise Exception
         output.outPutFile(outFile)
-    except:
+    except ImportError:
         print("ERROR: Must be a .wav or .txt file in the following format:")
         print("python main_analyzer.py <FILE>")
 
@@ -80,24 +80,37 @@ def get_master_dictionary(my_file, type):
         my_text = my_text.read().replace('\n', '')
         my_text = my_text.split('.')
 
+    master_dict = {}
     master_dict['num_lines'] = 0
+    master_dict['summary'] = []
     curr_index = 0
+    textSummary = ""
+    master_dict["lines"] = []
 
     for line in my_text:
         if line != "":
+            textSummary += line + "\n "
             print("\n\nline = {}".format(line))
             if line.endswith('\n'):
                 line = line[:-2]
             nlu_dict = get_nlu_dict_per_line(line)
             tone_dict = get_tone_dict_per_line(line)
+            hash_object = hashlib.md5(bytes(line, "utf-8"))
+            hash_object = hash_object.hexdigest()
             line_output = {
                 'text': line,
+                'hash': hash_object,
                 'nlu': nlu_dict,
                 'tone': tone_dict
             }
+            line_output = {"line": line_output}
             dict_name = "line" + str(curr_index)
+            # dict_name = "line"
+            master_dict['summary'] = textSummary
             master_dict['num_lines'] = 1 + master_dict['num_lines']
-            master_dict[dict_name] = line_output
+
+            # master_dict[dict_name] = line_output
+            master_dict["lines"].append(line_output)
             curr_index += 1
 
     print(json.dumps(master_dict, indent=2))
