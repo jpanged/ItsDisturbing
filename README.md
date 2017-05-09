@@ -15,7 +15,15 @@ as victims are often in love with, have an intense fear of, or may be financiall
 on the abuser. Some victims do not even view their current situation as a physically abusive relationship, keeping them stuck 
 in that unhealthy lifestyle for years.
 
-Our project "It's Disturbing", uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. 
+Our project aims to analyze speech and text input for potential red flags related to actions contained in WIC code 5150, PC 261, PC 273, and other similarly related behaviors. It uses Watson's Speech and Text analysis API to detect potential cases of physical and verbal abuse, and generate a report to potentially be sent out to doctors, lawyers, specified trusted friends, health centers, or the police. Examples include self harm, harm to others, and sexual assault. It accomplishes this by looking into the tone of a sentence through emotions such as anger or fear. Along with that, it checks if entities are contained in the same sentence. Entities include things such as People or Places. If a high level of negative emotions are connected to an entity, we believe a reg flag can be raised.
+
+We use the Watson API to process our speech and text, specifically SpeechToText, ToneAnalyzer, and NaturalLanguageUnderstanding. The flow of data goes from speech -> text -> tone/entity -> output
+
+Initially, we wanted to have the service built into a more interactive webapp where users could upload their own audio or text. In addition, we thought it would be cool if hardware could be integrated into the code, where a microphone could take live input, process it, and return a report. We quickly realized, however, that the scope of our time along with understanding and knowledge created a disparity between what we could do and what we wanted to do. Eventually, we just aimed to have some sort of working speech/text processor that outputs data. In addition, we wanted to have the results on a .tech domain (itsdisturbing.tech), but get.tech never got back to us. When they do, it would not be too difficult to accomplish what we want with the domain.
+
+Currently, our data outputs to a HTML file formatted with Bootstrap. It shows the levels of different tones along with any entities that are identified. For the future, we would want to structure the output in a more useful way to the user. This would include a summary of the entire text/speech's findings as opposed to just sentence by sentence. An educational component would also be a logical next step, where resources would be available if red flags were raised. With regards to red flags, we also need to create a better way to relate tone and entities to quantify the data.
+
+As our entire team consists of first years, we realize we do not have much of the technical competence yet for some implementations. Our goal for SiliconHacks was just to start and finish a project that could work, and get more experience through the learn by doing model. We are happy to have something to show for our weekend, and this is definitely a project that can be worked on past this weekend.
 
 
 ![toneicon](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/nlu.png)
