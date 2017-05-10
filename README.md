@@ -164,13 +164,13 @@ Once you have cloned the repository, navigate to the 'main_analyzer' directory.
 
 ```bash
 $ cd main_analyzer/
-$ python3 main_analyzer.py .WAV_FILE
+$ python3 main_analyzer.py FILE_NAME.wav
 ```
 or
 
 ```bash
 $ cd main_analyzer/
-$ python3 main_analyzer.py .TXT_FILE
+$ python3 main_analyzer.py FILE_NAME.txt
 ```
 
 ## API Resources, IBM Watson™
