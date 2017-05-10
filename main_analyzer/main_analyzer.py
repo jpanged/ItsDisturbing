@@ -28,12 +28,15 @@ def menu():
         elif user_inp.endswith(".txt"):
             outFile = get_master_dictionary(user_inp, "txt")
         else:
-            raise Exception
+            raise fileExtensionError
         output.outPutFile(outFile)
-    except Exception:
+    except fileExtensionError:
         print("ERROR: Must be a .wav or .txt file in the following format:")
         print("python main_analyzer.py <FILE>")
 
+
+class fileExtensionError(Exception):
+    pass
 
 """
 a sound_file is a str representing a .wav file
@@ -201,8 +204,21 @@ def nlp(input_stuff):
 
     response = natural_language_understanding.analyze(
         text=input_stuff,
-        features=[features.Entities(), features.Keywords()])
-    return(response["entities"])
+        features=[features.Concepts(), features.Entities(), features.Keywords(), features.Categories(), features.Emotion(), features.Sentiment(), features.Relations(), features.SemanticRoles()])
+    nlu_data = {
+    'sentiment' : response["sentiment"],
+    'semanticRoles' : response["semantic_roles"],
+    'concepts' : response["concepts"],
+    'entities' : response["entities"],
+    'relations' : response["relations"],
+    'concepts' : response["concepts"],
+    'categoreis' : response["categories"]
+    }
+    nlu_data = [nlu_data]
+    print(nlu_data)
+    return(nlu_data)
+    #print(response["entities"])
+    #return(response["entities"])
 
 
 """
@@ -215,8 +231,8 @@ Returns a dictionary with corresponding type, text, relevance, count values
 def get_nlu_dict_per_line(line):
     nlu_dict = {}
     output = nlp(line)
-    nlu_dict['nlu_entity_items'] = len(output)
-    for i in range(len(output)):
+    nlu_dict['nlu_entity_items'] = len(output[0]["entities"])
+    for i in range(len(output[0]["entities"])):
         entity_dict = {
             'type': '',
             'text': '',
@@ -224,7 +240,7 @@ def get_nlu_dict_per_line(line):
             'count': ''
         }
 
-        entity = output[i]
+        entity = output[0]["entities"][i]
         entity_dict['type'] = entity['type']
         entity_dict['text'] = entity['text']
         entity_dict['relevance'] = entity['relevance']
