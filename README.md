@@ -1,7 +1,7 @@
 # It's Disturbing
 ### Is it?
 
-UPDATE: Winner of SiliconHacks 2017 Most Technically Challenging Hack & #HackHarassment Challenge (Solution against online harassment)
+UPDATE: Winner of SiliconHacks 2017 Most Technically Challenging Hack & [#HackHarassment Challenge](https://www.hackharassment.com/) (Solution against online harassment)
 
 HackerEarth Submission: https://siliconhacks.hackerearth.com/sprints/siliconhacks/dashboard/pleasantonAndThePlebs/submission/
 
@@ -24,6 +24,29 @@ Initially, we wanted to have the service built into a more interactive webapp wh
 Currently, our data outputs to a HTML file formatted with Bootstrap. It shows the levels of different tones along with any entities that are identified. For the future, we would want to structure the output in a more useful way to the user. This would include a summary of the entire text/speech's findings as opposed to just sentence by sentence. An educational component would also be a logical next step, where resources would be available if red flags were raised. With regards to red flags, we also need to create a better way to relate tone and entities to quantify the data.
 
 As our entire team consists of first years, we realize we do not have much of the technical competence yet for some implementations. Our goal for SiliconHacks was just to start and finish a project that could work, and get more experience through the learn by doing model. We are happy to have something to show for our weekend, and this is definitely a project that can be worked on past this weekend.
+
+
+## Installation
+
+To install, use the command line.
+
+```bash
+$ pip install watson_developer_cloud/
+$ git clone https://github.com/jpanged/siliconhacks2017.git
+```
+
+Once you have cloned the repository, navigate to the 'main_analyzer' directory.
+
+```bash
+$ cd main_analyzer/
+$ python3 main_analyzer.py FILE_NAME.wav
+```
+or
+
+```bash
+$ cd main_analyzer/
+$ python3 main_analyzer.py FILE_NAME.txt
+```
 
 
 ![toneicon](https://github.com/jpanged/siliconhacks2017/blob/master/graphics/nlu.png)
@@ -150,28 +173,6 @@ Watson quantifies emotion using the five factor model (FFM) aka the Big Five per
 The IBM Watson™ Speech to Text service enables speech recognition capabilities.
 The service transcribes speech from various languages and audio formats to text with low latency.
 
-
-## Installation
-
-To install, use the command line.
-
-```bash
-$ pip install watson_developer_cloud/
-$ git clone https://github.com/jpanged/siliconhacks2017.git
-```
-
-Once you have cloned the repository, navigate to the 'main_analyzer' directory.
-
-```bash
-$ cd main_analyzer/
-$ python3 main_analyzer.py FILE_NAME.wav
-```
-or
-
-```bash
-$ cd main_analyzer/
-$ python3 main_analyzer.py FILE_NAME.txt
-```
 
 ## API Resources, IBM Watson™
 
