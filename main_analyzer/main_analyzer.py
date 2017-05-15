@@ -1,3 +1,4 @@
+# Import Libraries and APIs
 import json
 from sys import *
 from os.path import join, dirname
@@ -9,23 +10,20 @@ import watson_developer_cloud.natural_language_understanding.features.v1 as \
 import output
 import hashlib
 
+# Defines Main
 def main():
     menu()
 
-
-"""
-Presents user with menu of options
-"""
-
-
+#Presents user with menu of options
 def menu():
     user_inp = argv[1]
     #user_inp = raw_input("\nEnter your .wav file or .txt file: ")
     try:
-        if user_inp.endswith(".wav"):
+        # Begins by checking whether input is sound or text
+        if user_inp.endswith(".wav"): # If sound, convert to text, then create dictionary
             transcript_str = wav_file_to_text(user_inp)
             outFile = get_master_dictionary(transcript_str, "wav")
-        elif user_inp.endswith(".txt"):
+        elif user_inp.endswith(".txt"): # If text, just convert to dictionary
             outFile = get_master_dictionary(user_inp, "txt")
         else:
             raise fileExtensionError
@@ -34,15 +32,12 @@ def menu():
         print("ERROR: Must be a .wav or .txt file in the following format:")
         print("python main_analyzer.py <FILE>")
 
-
 class fileExtensionError(Exception):
     pass
 
-"""
-a sound_file is a str representing a .wav file
-"""
-
-
+# wav -> txt
+# Process sound input to text output
+# A sound_file is a str representing a .wav file
 def wav_file_to_text(sound_file):
     transcript = []
 
@@ -63,43 +58,40 @@ def wav_file_to_text(sound_file):
     return ret
 
 
-"""
-my_text is a str representing the .txt file the user wants to read from
-.txt file -> dict
-Returns a dictionary of each line in the format
-    'line1' : tone
-where tone is the line's emotion, writing, and social tones returned from the
-function below
-"""
-
-
+# my_text is a str representing the .txt file the user wants to read from
+# .txt file -> dict
+# Returns a dictionary of each line in the format
+#     'line1' : tone
+# where tone is the line's emotion, writing, and social tones returned from the function below
 def get_master_dictionary(my_file, type):
     master_dict = {}
+    # Begins by checking whether input is sound or text
     if type == "wav":   # .wav file
         my_text = my_file.split('\n')  # --> ['Line 1', 'Line 2', 'Line 3']
-        num_lines = len(my_text)
+        num_lines = len(my_text) # Number of lines
     else:   # .txt file
         my_text = open(my_file, "r")
         my_text = my_text.read().replace('\n', '')
         my_text = my_text.split('.')
-
+    # Initializes dictionary
     master_dict = {}
     master_dict['num_lines'] = 0
     master_dict['summary'] = []
     curr_index = 0
     textSummary = ""
     master_dict["lines"] = []
-
+    # Traverses every line of input to create dictionary
     for line in my_text:
         if line != "":
             textSummary += line + "\n "
             print("\n\nline = {}".format(line))
             if line.endswith('\n'):
                 line = line[:-2]
-            nlu_dict = get_nlu_dict_per_line(line)
-            tone_dict = get_tone_dict_per_line(line)
+            nlu_dict = get_nlu_dict_per_line(line) # Calls Natural Language Understanding API
+            tone_dict = get_tone_dict_per_line(line) # Calls Tone Analyzer API
             hash_object = hashlib.md5(bytes(line, "utf-8"))
             hash_object = hash_object.hexdigest()
+            # Starts to format output
             line_output = {
                 'text': line,
                 'hash': hash_object,
@@ -108,40 +100,35 @@ def get_master_dictionary(my_file, type):
             }
             line_output = {"line": line_output}
             dict_name = "line" + str(curr_index)
-            # dict_name = "line"
             master_dict['summary'] = textSummary
             master_dict['num_lines'] = 1 + master_dict['num_lines']
 
-            # master_dict[dict_name] = line_output
             master_dict["lines"].append(line_output)
             curr_index += 1
 
     print(json.dumps(master_dict, indent=2))
     master_dict = json.dumps(master_dict)
-    return master_dict
+    return master_dict # Spits out JSON output
 
-
+# Calls the SpeechToTextV1 API
 speech_to_text = SpeechToTextV1(
-    username="587aae79-5967-434b-93c4-3c4bd3f40621",
-    password="AnPJuMD0GjYE",
+    username="587aae79-5967-434b-93c4-3c4bd3f40621", # API Key
+    password="AnPJuMD0GjYE", # Replace with personal API
     x_watson_learning_opt_out=False
 )
 
-
+# Calls ToneAnalyzerV3 API
 tone_analyzer = ToneAnalyzerV3(
-    username='177e2d8a-1048-4fcc-b256-022adbc2fc6b',
-    password='xMZuRoB52uu7',
+    username='177e2d8a-1048-4fcc-b256-022adbc2fc6b', # API Key 
+    password='xMZuRoB52uu7', # Replace with personal API
     #url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
     version='2016-05-06'
 )
 
-"""
-a line is a str representing one line of the .txt file
-str -> dict
-Returns a dictionary with corresponding emotion, writing, and social tone scores
-"""
 
-
+# A line is a str representing one line of the .txt file
+# str -> dict
+# Returns a dictionary with corresponding emotion, writing, and social tone scores
 def get_tone_dict_per_line(line):
 
     tone_analysis_emotion = {
@@ -195,12 +182,14 @@ def get_tone_dict_per_line(line):
 
     return tone
 
-
+# str -> listofdicts
+# Gets Natural Language data for the line of text 
 def nlp(input_stuff):
+    # Calls NaturalLanguageUnderstandingV1 API
     natural_language_understanding = NaturalLanguageUnderstandingV1(
         version='2017-02-27',
-        username="83e901c3-bc9c-43f8-af70-c836d0cd0ea0",
-        password="yDEjfUUEeHBz")
+        username="83e901c3-bc9c-43f8-af70-c836d0cd0ea0", # API Key 
+        password="yDEjfUUEeHBz") # Replace with personal API
 
     response = natural_language_understanding.analyze(
         text=input_stuff,
@@ -217,17 +206,13 @@ def nlp(input_stuff):
     nlu_data = [nlu_data]
     print(nlu_data)
     return(nlu_data)
-    #print(response["entities"])
-    #return(response["entities"])
 
 
-"""
-a line is a str representing one line of the .txt file
-str -> dict
-Returns a dictionary with corresponding type, text, relevance, count values
-"""
 
 
+# a line is a str representing one line of the .txt file
+# str -> dict
+# Returns a dictionary with corresponding type, text, relevance, count values
 def get_nlu_dict_per_line(line):
     nlu_dict = {}
     output = nlp(line)
