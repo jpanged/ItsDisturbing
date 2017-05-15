@@ -1,6 +1,284 @@
 import json
 
-data = {'line8': {'text': "I'm so scared", 'nlu': {}, 'tone': {'emotion': {'anger': 0.9, 'joy': 0.0, 'fear': 0.9, 'sadness': 0.0, 'disgust': 0.0}, 'social': {'extraversion_big5': 0.522652, 'openness_big5': 0.083603, 'conscientiousness_big5': 0.272945, 'neuroticism_big5': 0.0659, 'agreeableness_big5': 0.595476}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.0}}}, 'line7': {'text': 'This is out of control', 'nlu': {}, 'tone': {'emotion': {'anger': 0.350118, 'joy': 0.023977, 'fear': 0.170767, 'sadness': 0.374915, 'disgust': 0.168979}, 'social': {'extraversion_big5': 0.585703, 'openness_big5': 0.89945, 'conscientiousness_big5': 0.370109, 'neuroticism_big5': 0.21098, 'agreeableness_big5': 0.435971}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.0}}}, 'line6': {'text': 'I will not allow this', 'nlu': {}, 'tone': {'emotion': {'anger': 0.356441, 'joy': 0.01555, 'fear': 0.418217, 'sadness': 0.257707, 'disgust': 0.034403}, 'social': {'extraversion_big5': 0.022418, 'openness_big5': 0.270438, 'conscientiousness_big5': 0.487677, 'neuroticism_big5': 0.24117, 'agreeableness_big5': 0.649679}, 'writing': {'analytical': 0.882284, 'confident': 0.0, 'tentative': 0.0}}}, 'line5': {'text': "I can't take it anymore", 'nlu': {}, 'tone': {'emotion': {'anger': 0.099987, 'joy': 0.003219, 'fear': 0.231003, 'sadness': 0.65732, 'disgust': 0.077772}, 'social': {'extraversion_big5': 0.048625, 'openness_big5': 0.003774, 'conscientiousness_big5': 0.260345, 'neuroticism_big5': 0.008086, 'agreeableness_big5': 0.433571}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.0}}}, 'line4': {'text': 'What if I just want to die', 'nlu': {}, 'tone': {'emotion': {'anger': 0.336639, 'joy': 0.002626, 'fear': 0.058749, 'sadness': 0.539582, 'disgust': 0.157712}, 'social': {'extraversion_big5': 0.07113, 'openness_big5': 0.235004, 'conscientiousness_big5': 0.303431, 'neuroticism_big5': 0.074935, 'agreeableness_big5': 0.60043}, 'writing': {'analytical': 0.801827, 'confident': 0.0, 'tentative': 0.91961}}}, 'line3': {'text': 'He could only consider me as the living corpse of a would-be suicide, a person dead to shame, an idiot ghost', 'nlu': {}, 'tone': {'emotion': {'anger': 0.193647, 'joy': 3.4e-05, 'fear': 0.03294, 'sadness': 0.565851, 'disgust': 0.323069}, 'social': {'extraversion_big5': 0.15682, 'openness_big5': 0.681763, 'conscientiousness_big5': 0.010776, 'neuroticism_big5': 0.276494, 'agreeableness_big5': 0.512846}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.471477}}}, 'line2': {'text': 'Rain makes me feel less alon', 'nlu': {}, 'tone': {'emotion': {'anger': 0.134344, 'joy': 0.019464, 'fear': 0.433093, 'sadness': 0.444153, 'disgust': 0.01924}, 'social': {'extraversion_big5': 0.460403, 'openness_big5': 0.021653, 'conscientiousness_big5': 0.23409, 'neuroticism_big5': 0.002504, 'agreeableness_big5': 0.595923}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.75152}}}, 'line1': {'text': "I can't believe you did this to me", 'nlu': {}, 'tone': {'emotion': {'anger': 0.070895, 'joy': 0.015509, 'fear': 0.085751, 'sadness': 0.398202, 'disgust': 0.53588}, 'social': {'extraversion_big5': 0.170601, 'openness_big5': 0.001908, 'conscientiousness_big5': 0.552716, 'neuroticism_big5': 0.041148, 'agreeableness_big5': 0.7794}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.88939}}}, 'line0': {'text': 'They ran out of yogurt at the store', 'nlu': {}, 'tone': {'emotion': {'anger': 0.332842, 'joy': 0.042066, 'fear': 0.189564, 'sadness': 0.433558, 'disgust': 0.032106}, 'social': {'extraversion_big5': 0.36527, 'openness_big5': 0.607778, 'conscientiousness_big5': 0.532194, 'neuroticism_big5': 0.815845, 'agreeableness_big5': 0.408635}, 'writing': {'analytical': 0.0, 'confident': 0.0, 'tentative': 0.0}}}}
+data =   "lines": [
+    {
+      "line": {
+        "text": "I Wanted To Maybe Hold OneCrying helps me slow down and obsess over the weight of life\u00e2\u20ac\u2122s problemsI\u00e2\u20ac\u2122m too sad to walk",
+        "hash": "00f1f763004d8362134016e01f286951",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.09692,
+            "disgust": 0.014756,
+            "fear": 0.162168,
+            "joy": 0.027658,
+            "sadness": 0.842156
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.401017
+          },
+          "social": {
+            "openness_big5": 0.018417,
+            "conscientiousness_big5": 7.9e-05,
+            "extraversion_big5": 0.07064,
+            "agreeableness_big5": 0.533203,
+            "neuroticism_big5": 5.6e-05
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " Just give me a few\u00e2\u20ac\u00a6 hours",
+        "hash": "ac445e62e2608f03fff70363b0fb1a30",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.320119,
+            "disgust": 0.091338,
+            "fear": 0.139965,
+            "joy": 0.272658,
+            "sadness": 0.272876
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.946222
+          },
+          "social": {
+            "openness_big5": 0.0914,
+            "conscientiousness_big5": 0.383639,
+            "extraversion_big5": 0.265582,
+            "agreeableness_big5": 0.721233,
+            "neuroticism_big5": 0.022881
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": "Okay\u00e2\u20ac\u00a6 I\u00e2\u20ac\u2122m positive that you\u00e2\u20ac\u2122ll get lost in there!Yeah, it was the day the Prairie Dogs lost the big playoff game",
+        "hash": "5154705cbbaeeb02b13473598fc246b4",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.115739,
+            "disgust": 0.144558,
+            "fear": 0.096972,
+            "joy": 0.315609,
+            "sadness": 0.45559
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.543112,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.417176,
+            "conscientiousness_big5": 0.67755,
+            "extraversion_big5": 0.357026,
+            "agreeableness_big5": 0.708298,
+            "neuroticism_big5": 0.916041
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " Riley missed the winning shot",
+        "hash": "4c0dd23629e5fea111488c5748124d9f",
+        "nlu": {
+          "nlu_entity_items": 1,
+          "entity0": {
+            "type": "Person",
+            "text": "Riley",
+            "relevance": 0.33,
+            "count": 1
+          }
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.101484,
+            "disgust": 0.03859,
+            "fear": 0.289511,
+            "joy": 0.041607,
+            "sadness": 0.707136
+          },
+          "writing": {
+            "analytical": 0.235443,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.156074,
+            "conscientiousness_big5": 0.293182,
+            "extraversion_big5": 0.599666,
+            "agreeableness_big5": 0.655202,
+            "neuroticism_big5": 0.603309
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " She felt awful",
+        "hash": "28a6ce2132e369e218d0aa0e6d382c35",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.9,
+            "disgust": 0.9,
+            "fear": 0.9,
+            "joy": 0.0,
+            "sadness": 0.9
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.946222
+          },
+          "social": {
+            "openness_big5": 0.18065,
+            "conscientiousness_big5": 0.262845,
+            "extraversion_big5": 0.510997,
+            "agreeableness_big5": 0.602172,
+            "neuroticism_big5": 0.09212
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " She wanted to quit",
+        "hash": "3617808fd76b1b2675984dcc2e93fd2b",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.550084,
+            "disgust": 0.102281,
+            "fear": 0.035286,
+            "joy": 0.016641,
+            "sadness": 0.270058
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.104941,
+            "conscientiousness_big5": 0.237463,
+            "extraversion_big5": 0.401066,
+            "agreeableness_big5": 0.591802,
+            "neuroticism_big5": 0.272008
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " Sorry, I went sad again, didn\u00e2\u20ac\u2122t I?Remember the funny movie where the dog died?Goodbye Friendship! Hello Loneliness!Oh, he doesn\u00e2\u20ac\u2122t love us anymore",
+        "hash": "b2a699cfc8a58c6deb61399ad96fb39d",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.005276,
+            "disgust": 0.012934,
+            "fear": 0.091509,
+            "joy": 0.028578,
+            "sadness": 0.936562
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.015107,
+            "conscientiousness_big5": 0.008552,
+            "extraversion_big5": 0.00164,
+            "agreeableness_big5": 0.757871,
+            "neuroticism_big5": 0.03054
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " That\u00e2\u20ac\u2122s sad",
+        "hash": "77bc5a378df63c495dd9f25241549e52",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.056557,
+            "disgust": 0.047552,
+            "fear": 0.125645,
+            "joy": 0.009741,
+            "sadness": 0.901814
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.111885,
+            "conscientiousness_big5": 0.231436,
+            "extraversion_big5": 0.378659,
+            "agreeableness_big5": 0.601923,
+            "neuroticism_big5": 0.077487
+          }
+        }
+      }
+    },
+    {
+      "line": {
+        "text": " I-I should drive, right?",
+        "hash": "ae75519e6f377cbf1be98dbe48f57b52",
+        "nlu": {
+          "nlu_entity_items": 0
+        },
+        "tone": {
+          "emotion": {
+            "anger": 0.270067,
+            "disgust": 0.041976,
+            "fear": 0.183372,
+            "joy": 0.375752,
+            "sadness": 0.064988
+          },
+          "writing": {
+            "analytical": 0.0,
+            "confident": 0.0,
+            "tentative": 0.0
+          },
+          "social": {
+            "openness_big5": 0.193646,
+            "conscientiousness_big5": 0.287808,
+            "extraversion_big5": 0.336071,
+            "agreeableness_big5": 0.639886,
+            "neuroticism_big5": 0.426192
+          }
+        }
+      }
+    }
+  ]
+}
 
 
 json_str = json.dumps(data)

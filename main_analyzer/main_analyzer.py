@@ -11,19 +11,26 @@ import output
 import hashlib
 
 # Defines Main
+
+
 def main():
     menu()
 
-#Presents user with menu of options
+# Presents user with menu of options
+
+
 def menu():
-    user_inp = argv[1]
+
     #user_inp = raw_input("\nEnter your .wav file or .txt file: ")
     try:
+        user_inp = argv[1]
         # Begins by checking whether input is sound or text
-        if user_inp.endswith(".wav"): # If sound, convert to text, then create dictionary
+
+        # If sound, convert to text, then create dictionary
+        if user_inp.endswith(".wav"):
             transcript_str = wav_file_to_text(user_inp)
             outFile = get_master_dictionary(transcript_str, "wav")
-        elif user_inp.endswith(".txt"): # If text, just convert to dictionary
+        elif user_inp.endswith(".txt"):  # If text, just convert to dictionary
             outFile = get_master_dictionary(user_inp, "txt")
         else:
             raise fileExtensionError
@@ -31,6 +38,10 @@ def menu():
     except fileExtensionError:
         print("ERROR: Must be a .wav or .txt file in the following format:")
         print("python main_analyzer.py <FILE>")
+    except IndexError:
+        print("ERROR: Must be a .wav or .txt file in the following format:")
+        print("python main_analyzer.py <FILE>")
+
 
 class fileExtensionError(Exception):
     pass
@@ -38,6 +49,8 @@ class fileExtensionError(Exception):
 # wav -> txt
 # Process sound input to text output
 # A sound_file is a str representing a .wav file
+
+
 def wav_file_to_text(sound_file):
     transcript = []
 
@@ -62,13 +75,14 @@ def wav_file_to_text(sound_file):
 # .txt file -> dict
 # Returns a dictionary of each line in the format
 #     'line1' : tone
-# where tone is the line's emotion, writing, and social tones returned from the function below
+# where tone is the line's emotion, writing, and social tones returned
+# from the function below
 def get_master_dictionary(my_file, type):
     master_dict = {}
     # Begins by checking whether input is sound or text
     if type == "wav":   # .wav file
         my_text = my_file.split('\n')  # --> ['Line 1', 'Line 2', 'Line 3']
-        num_lines = len(my_text) # Number of lines
+        num_lines = len(my_text)  # Number of lines
     else:   # .txt file
         my_text = open(my_file, "r")
         my_text = my_text.read().replace('\n', '')
@@ -87,8 +101,9 @@ def get_master_dictionary(my_file, type):
             print("\n\nline = {}".format(line))
             if line.endswith('\n'):
                 line = line[:-2]
-            nlu_dict = get_nlu_dict_per_line(line) # Calls Natural Language Understanding API
-            tone_dict = get_tone_dict_per_line(line) # Calls Tone Analyzer API
+            # Calls Natural Language Understanding API
+            nlu_dict = get_nlu_dict_per_line(line)
+            tone_dict = get_tone_dict_per_line(line)  # Calls Tone Analyzer API
             hash_object = hashlib.md5(bytes(line, "utf-8"))
             hash_object = hash_object.hexdigest()
             # Starts to format output
@@ -108,19 +123,20 @@ def get_master_dictionary(my_file, type):
 
     print(json.dumps(master_dict, indent=2))
     master_dict = json.dumps(master_dict)
-    return master_dict # Spits out JSON output
+    return master_dict  # Spits out JSON output
+
 
 # Calls the SpeechToTextV1 API
 speech_to_text = SpeechToTextV1(
-    username="587aae79-5967-434b-93c4-3c4bd3f40621", # API Key
-    password="AnPJuMD0GjYE", # Replace with personal API
+    username="587aae79-5967-434b-93c4-3c4bd3f40621",  # API Key
+    password="AnPJuMD0GjYE",  # Replace with personal API
     x_watson_learning_opt_out=False
 )
 
 # Calls ToneAnalyzerV3 API
 tone_analyzer = ToneAnalyzerV3(
-    username='177e2d8a-1048-4fcc-b256-022adbc2fc6b', # API Key 
-    password='xMZuRoB52uu7', # Replace with personal API
+    username='177e2d8a-1048-4fcc-b256-022adbc2fc6b',  # API Key
+    password='xMZuRoB52uu7',  # Replace with personal API
     #url = 'https://gateway.watsonplatform.net/tone-analyzer/api'
     version='2016-05-06'
 )
@@ -128,7 +144,8 @@ tone_analyzer = ToneAnalyzerV3(
 
 # A line is a str representing one line of the .txt file
 # str -> dict
-# Returns a dictionary with corresponding emotion, writing, and social tone scores
+# Returns a dictionary with corresponding emotion, writing, and social
+# tone scores
 def get_tone_dict_per_line(line):
 
     tone_analysis_emotion = {
@@ -183,31 +200,31 @@ def get_tone_dict_per_line(line):
     return tone
 
 # str -> listofdicts
-# Gets Natural Language data for the line of text 
+# Gets Natural Language data for the line of text
+
+
 def nlp(input_stuff):
     # Calls NaturalLanguageUnderstandingV1 API
     natural_language_understanding = NaturalLanguageUnderstandingV1(
         version='2017-02-27',
-        username="83e901c3-bc9c-43f8-af70-c836d0cd0ea0", # API Key 
-        password="yDEjfUUEeHBz") # Replace with personal API
+        username="83e901c3-bc9c-43f8-af70-c836d0cd0ea0",  # API Key
+        password="yDEjfUUEeHBz")  # Replace with personal API
 
     response = natural_language_understanding.analyze(
         text=input_stuff,
         features=[features.Concepts(), features.Entities(), features.Keywords(), features.Categories(), features.Emotion(), features.Sentiment(), features.Relations(), features.SemanticRoles()])
     nlu_data = {
-    'sentiment' : response["sentiment"],
-    'semanticRoles' : response["semantic_roles"],
-    'concepts' : response["concepts"],
-    'entities' : response["entities"],
-    'relations' : response["relations"],
-    'concepts' : response["concepts"],
-    'categoreis' : response["categories"]
+        'sentiment': response["sentiment"],
+        'semanticRoles': response["semantic_roles"],
+        'concepts': response["concepts"],
+        'entities': response["entities"],
+        'relations': response["relations"],
+        'concepts': response["concepts"],
+        'categoreis': response["categories"]
     }
     nlu_data = [nlu_data]
-    print(nlu_data)
+    # print(nlu_data)
     return(nlu_data)
-
-
 
 
 # a line is a str representing one line of the .txt file
@@ -233,7 +250,62 @@ def get_nlu_dict_per_line(line):
 
         en_dict_name = "entity" + str(i)
         nlu_dict[en_dict_name] = entity_dict
+        # nlu_dict.append(entity_dict)
 
+#####
+# TO BE ADDED IS THE FOLLOWING WHICH ADDS IN A LOT MORE NLU DATA
+#####
+
+    # sentiment_dict = {
+    #     'score': output[0]["sentiment"]["document"]["score"],
+    #     'label': output[0]["sentiment"]["document"]["label"]
+    # }
+    #
+    # for i in range(len(output[0]["semanticRoles"])):
+    #     semantic_roles = output[0]["semanticRoles"][i]
+    #     semantic_roles_action_dict = {
+    #         'text': '',
+    #         'tense': '',
+    #         'text-normalized': ''
+    #     }
+    #     semantic_roles_dict = {
+    #         'subject': '',
+    #         'sentence': '',
+    #         'object': '',
+    #         'action': semantic_roles_action_dict,
+    #     }
+    #     semantic_roles_dict["subject"] = semantic_roles["subject"]["text"]
+    #     semantic_roles_dict["sentance"] = semanti_roles["sentance"]
+    #     semantic_roles_dict["object"] = semantic_roles["object"]["text"]
+    #     for i in range(len(output[0]["semanticRoles"])):
+    #         semantic_roles_action_dict["text"]
+    #
+    # concepts_dict = {
+    #     'text': '',
+    #     'relevance': '',
+    #     'dbpedia_resource': ''
+    # }
+    # relations_arguments_entities_dict = {
+    #     'type': '',
+    #     'text': ''
+    # }
+    # relations_arguments_dict = {
+    #     'text': '',
+    #     'entities': relations_arguments_entities_dict
+    # }
+    # relations_dict = {
+    #     'type': '',
+    #     'sentence': '',
+    #     'score': '',
+    #     'arguments': relations_arguments_dict,
+    # }
+    # categories_category_dict = {
+    #     'score': '',
+    #     'label': ''
+    # }
+    # cetegories_dict = {
+    #     'category': categories_category_dict
+    # }
     return nlu_dict
 
 
