@@ -1,7 +1,7 @@
 # It's Disturbing
 ### Is it?
 
-UPDATE: Winner of SiliconHacks 2017 Most Technically Challenging Hack & [#HackHarassment Challenge](https://www.hackharassment.com/) (Solution against online harassment)
+UPDATE: Winner of SiliconHacks 2017 Most Technically Challenging Hack, Wolfram Top Tech Award, and [#HackHarassment Challenge](https://www.hackharassment.com/) (Solution against online harassment)
 
 HackerEarth Submission: https://siliconhacks.hackerearth.com/sprints/siliconhacks/dashboard/pleasantonAndThePlebs/submission/
 
